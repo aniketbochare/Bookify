@@ -15,6 +15,8 @@
 		F808F38F19E0398A0002D336 /* BookifyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F38E19E0398A0002D336 /* BookifyTests.m */; };
 		F808F39D19E03F900002D336 /* Simple iPhone 6 Wallpaper 07 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = F808F39C19E03F900002D336 /* Simple iPhone 6 Wallpaper 07 copy.png */; };
 		F808F3A219E0491A0002D336 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F808F3A119E0491A0002D336 /* .gitignore */; };
+		F808F3A519E050760002D336 /* BookListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F3A419E050760002D336 /* BookListTableViewController.m */; };
+		F808F3A819E050AF0002D336 /* BookListCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F3A719E050AF0002D336 /* BookListCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,10 @@
 		F808F38E19E0398A0002D336 /* BookifyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookifyTests.m; sourceTree = "<group>"; };
 		F808F39C19E03F900002D336 /* Simple iPhone 6 Wallpaper 07 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simple iPhone 6 Wallpaper 07 copy.png"; sourceTree = "<group>"; };
 		F808F3A119E0491A0002D336 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F808F3A319E050760002D336 /* BookListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookListTableViewController.h; sourceTree = "<group>"; };
+		F808F3A419E050760002D336 /* BookListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookListTableViewController.m; sourceTree = "<group>"; };
+		F808F3A619E050AF0002D336 /* BookListCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookListCollectionViewController.h; sourceTree = "<group>"; };
+		F808F3A719E050AF0002D336 /* BookListCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookListCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,9 +93,13 @@
 				F808F37319E039890002D336 /* AppDelegate.h */,
 				F808F37419E039890002D336 /* AppDelegate.m */,
 				F808F37C19E0398A0002D336 /* Main.storyboard */,
+				F808F3A319E050760002D336 /* BookListTableViewController.h */,
+				F808F3A419E050760002D336 /* BookListTableViewController.m */,
 				F808F37F19E0398A0002D336 /* Images.xcassets */,
 				F808F38119E0398A0002D336 /* LaunchScreen.xib */,
 				F808F36F19E039890002D336 /* Supporting Files */,
+				F808F3A619E050AF0002D336 /* BookListCollectionViewController.h */,
+				F808F3A719E050AF0002D336 /* BookListCollectionViewController.m */,
 			);
 			path = Bookify;
 			sourceTree = "<group>";
@@ -230,8 +240,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F808F3A519E050760002D336 /* BookListTableViewController.m in Sources */,
 				F808F37519E039890002D336 /* AppDelegate.m in Sources */,
 				F808F37219E039890002D336 /* main.m in Sources */,
+				F808F3A819E050AF0002D336 /* BookListCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
