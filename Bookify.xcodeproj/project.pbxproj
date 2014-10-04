@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		F808F37219E039890002D336 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F37119E039890002D336 /* main.m */; };
 		F808F37519E039890002D336 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F37419E039890002D336 /* AppDelegate.m */; };
-		F808F37819E039890002D336 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F37719E039890002D336 /* FirstViewController.m */; };
-		F808F37B19E0398A0002D336 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F37A19E0398A0002D336 /* SecondViewController.m */; };
 		F808F37E19E0398A0002D336 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F808F37C19E0398A0002D336 /* Main.storyboard */; };
 		F808F38019E0398A0002D336 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F808F37F19E0398A0002D336 /* Images.xcassets */; };
 		F808F38319E0398A0002D336 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F808F38119E0398A0002D336 /* LaunchScreen.xib */; };
 		F808F38F19E0398A0002D336 /* BookifyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F38E19E0398A0002D336 /* BookifyTests.m */; };
+		F808F39D19E03F900002D336 /* Simple iPhone 6 Wallpaper 07 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = F808F39C19E03F900002D336 /* Simple iPhone 6 Wallpaper 07 copy.png */; };
+		F808F3A019E048930002D336 /* BookListViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F39F19E048930002D336 /* BookListViewControllerTableViewController.m */; };
+		F808F3A219E0491A0002D336 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F808F3A119E0491A0002D336 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,16 +34,16 @@
 		F808F37119E039890002D336 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F808F37319E039890002D336 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F808F37419E039890002D336 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F808F37619E039890002D336 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		F808F37719E039890002D336 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		F808F37919E039890002D336 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		F808F37A19E0398A0002D336 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		F808F37D19E0398A0002D336 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F808F37F19E0398A0002D336 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F808F38219E0398A0002D336 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F808F38819E0398A0002D336 /* BookifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F808F38D19E0398A0002D336 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F808F38E19E0398A0002D336 /* BookifyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookifyTests.m; sourceTree = "<group>"; };
+		F808F39C19E03F900002D336 /* Simple iPhone 6 Wallpaper 07 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simple iPhone 6 Wallpaper 07 copy.png"; sourceTree = "<group>"; };
+		F808F39E19E048930002D336 /* BookListViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookListViewControllerTableViewController.h; sourceTree = "<group>"; };
+		F808F39F19E048930002D336 /* BookListViewControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookListViewControllerTableViewController.m; sourceTree = "<group>"; };
+		F808F3A119E0491A0002D336 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +67,9 @@
 		F808F36319E039890002D336 = {
 			isa = PBXGroup;
 			children = (
+				F808F3A119E0491A0002D336 /* .gitignore */,
 				F808F36E19E039890002D336 /* Bookify */,
+				F808F39919E03D8F0002D336 /* Resources */,
 				F808F38B19E0398A0002D336 /* BookifyTests */,
 				F808F36D19E039890002D336 /* Products */,
 			);
@@ -86,14 +89,12 @@
 			children = (
 				F808F37319E039890002D336 /* AppDelegate.h */,
 				F808F37419E039890002D336 /* AppDelegate.m */,
-				F808F37619E039890002D336 /* FirstViewController.h */,
-				F808F37719E039890002D336 /* FirstViewController.m */,
-				F808F37919E039890002D336 /* SecondViewController.h */,
-				F808F37A19E0398A0002D336 /* SecondViewController.m */,
 				F808F37C19E0398A0002D336 /* Main.storyboard */,
 				F808F37F19E0398A0002D336 /* Images.xcassets */,
 				F808F38119E0398A0002D336 /* LaunchScreen.xib */,
 				F808F36F19E039890002D336 /* Supporting Files */,
+				F808F39E19E048930002D336 /* BookListViewControllerTableViewController.h */,
+				F808F39F19E048930002D336 /* BookListViewControllerTableViewController.m */,
 			);
 			path = Bookify;
 			sourceTree = "<group>";
@@ -122,6 +123,14 @@
 				F808F38D19E0398A0002D336 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F808F39919E03D8F0002D336 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F808F39C19E03F900002D336 /* Simple iPhone 6 Wallpaper 07 copy.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,7 +213,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F808F3A219E0491A0002D336 /* .gitignore in Resources */,
 				F808F37E19E0398A0002D336 /* Main.storyboard in Resources */,
+				F808F39D19E03F900002D336 /* Simple iPhone 6 Wallpaper 07 copy.png in Resources */,
 				F808F38319E0398A0002D336 /* LaunchScreen.xib in Resources */,
 				F808F38019E0398A0002D336 /* Images.xcassets in Resources */,
 			);
@@ -224,9 +235,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F808F37B19E0398A0002D336 /* SecondViewController.m in Sources */,
+				F808F3A019E048930002D336 /* BookListViewControllerTableViewController.m in Sources */,
 				F808F37519E039890002D336 /* AppDelegate.m in Sources */,
-				F808F37819E039890002D336 /* FirstViewController.m in Sources */,
 				F808F37219E039890002D336 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +362,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Bookify/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -362,6 +373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Bookify/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
