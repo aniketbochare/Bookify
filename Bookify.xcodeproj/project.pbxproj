@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F808F37219E039890002D336 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F37119E039890002D336 /* main.m */; };
+		F808F37519E039890002D336 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F37419E039890002D336 /* AppDelegate.m */; };
+		F808F37819E039890002D336 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F37719E039890002D336 /* FirstViewController.m */; };
+		F808F37B19E0398A0002D336 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F37A19E0398A0002D336 /* SecondViewController.m */; };
+		F808F37E19E0398A0002D336 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F808F37C19E0398A0002D336 /* Main.storyboard */; };
+		F808F38019E0398A0002D336 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F808F37F19E0398A0002D336 /* Images.xcassets */; };
+		F808F38319E0398A0002D336 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F808F38119E0398A0002D336 /* LaunchScreen.xib */; };
+		F808F38F19E0398A0002D336 /* BookifyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F38E19E0398A0002D336 /* BookifyTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F808F38919E0398A0002D336 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F808F36419E039890002D336 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F808F36B19E039890002D336;
+			remoteInfo = Bookify;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F808F36C19E039890002D336 /* Bookify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookify.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F808F37019E039890002D336 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F808F37119E039890002D336 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F808F37319E039890002D336 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F808F37419E039890002D336 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F808F37619E039890002D336 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		F808F37719E039890002D336 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		F808F37919E039890002D336 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		F808F37A19E0398A0002D336 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		F808F37D19E0398A0002D336 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F808F37F19E0398A0002D336 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F808F38219E0398A0002D336 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F808F38819E0398A0002D336 /* BookifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F808F38D19E0398A0002D336 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F808F38E19E0398A0002D336 /* BookifyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookifyTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F808F36919E039890002D336 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F808F38519E0398A0002D336 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F808F36319E039890002D336 = {
+			isa = PBXGroup;
+			children = (
+				F808F36E19E039890002D336 /* Bookify */,
+				F808F38B19E0398A0002D336 /* BookifyTests */,
+				F808F36D19E039890002D336 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F808F36D19E039890002D336 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F808F36C19E039890002D336 /* Bookify.app */,
+				F808F38819E0398A0002D336 /* BookifyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F808F36E19E039890002D336 /* Bookify */ = {
+			isa = PBXGroup;
+			children = (
+				F808F37319E039890002D336 /* AppDelegate.h */,
+				F808F37419E039890002D336 /* AppDelegate.m */,
+				F808F37619E039890002D336 /* FirstViewController.h */,
+				F808F37719E039890002D336 /* FirstViewController.m */,
+				F808F37919E039890002D336 /* SecondViewController.h */,
+				F808F37A19E0398A0002D336 /* SecondViewController.m */,
+				F808F37C19E0398A0002D336 /* Main.storyboard */,
+				F808F37F19E0398A0002D336 /* Images.xcassets */,
+				F808F38119E0398A0002D336 /* LaunchScreen.xib */,
+				F808F36F19E039890002D336 /* Supporting Files */,
+			);
+			path = Bookify;
+			sourceTree = "<group>";
+		};
+		F808F36F19E039890002D336 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F808F37019E039890002D336 /* Info.plist */,
+				F808F37119E039890002D336 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F808F38B19E0398A0002D336 /* BookifyTests */ = {
+			isa = PBXGroup;
+			children = (
+				F808F38E19E0398A0002D336 /* BookifyTests.m */,
+				F808F38C19E0398A0002D336 /* Supporting Files */,
+			);
+			path = BookifyTests;
+			sourceTree = "<group>";
+		};
+		F808F38C19E0398A0002D336 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F808F38D19E0398A0002D336 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F808F36B19E039890002D336 /* Bookify */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F808F39219E0398A0002D336 /* Build configuration list for PBXNativeTarget "Bookify" */;
+			buildPhases = (
+				F808F36819E039890002D336 /* Sources */,
+				F808F36919E039890002D336 /* Frameworks */,
+				F808F36A19E039890002D336 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bookify;
+			productName = Bookify;
+			productReference = F808F36C19E039890002D336 /* Bookify.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F808F38719E0398A0002D336 /* BookifyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F808F39519E0398A0002D336 /* Build configuration list for PBXNativeTarget "BookifyTests" */;
+			buildPhases = (
+				F808F38419E0398A0002D336 /* Sources */,
+				F808F38519E0398A0002D336 /* Frameworks */,
+				F808F38619E0398A0002D336 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F808F38A19E0398A0002D336 /* PBXTargetDependency */,
+			);
+			name = BookifyTests;
+			productName = BookifyTests;
+			productReference = F808F38819E0398A0002D336 /* BookifyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F808F36419E039890002D336 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Coral;
+				TargetAttributes = {
+					F808F36B19E039890002D336 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					F808F38719E0398A0002D336 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = F808F36B19E039890002D336;
+					};
+				};
+			};
+			buildConfigurationList = F808F36719E039890002D336 /* Build configuration list for PBXProject "Bookify" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F808F36319E039890002D336;
+			productRefGroup = F808F36D19E039890002D336 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F808F36B19E039890002D336 /* Bookify */,
+				F808F38719E0398A0002D336 /* BookifyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F808F36A19E039890002D336 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F808F37E19E0398A0002D336 /* Main.storyboard in Resources */,
+				F808F38319E0398A0002D336 /* LaunchScreen.xib in Resources */,
+				F808F38019E0398A0002D336 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F808F38619E0398A0002D336 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F808F36819E039890002D336 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F808F37B19E0398A0002D336 /* SecondViewController.m in Sources */,
+				F808F37519E039890002D336 /* AppDelegate.m in Sources */,
+				F808F37819E039890002D336 /* FirstViewController.m in Sources */,
+				F808F37219E039890002D336 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F808F38419E0398A0002D336 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F808F38F19E0398A0002D336 /* BookifyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F808F38A19E0398A0002D336 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F808F36B19E039890002D336 /* Bookify */;
+			targetProxy = F808F38919E0398A0002D336 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F808F37C19E0398A0002D336 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F808F37D19E0398A0002D336 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F808F38119E0398A0002D336 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F808F38219E0398A0002D336 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F808F39019E0398A0002D336 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F808F39119E0398A0002D336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F808F39319E0398A0002D336 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Bookify/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F808F39419E0398A0002D336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Bookify/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F808F39619E0398A0002D336 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BookifyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bookify.app/Bookify";
+			};
+			name = Debug;
+		};
+		F808F39719E0398A0002D336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BookifyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bookify.app/Bookify";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F808F36719E039890002D336 /* Build configuration list for PBXProject "Bookify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F808F39019E0398A0002D336 /* Debug */,
+				F808F39119E0398A0002D336 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F808F39219E0398A0002D336 /* Build configuration list for PBXNativeTarget "Bookify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F808F39319E0398A0002D336 /* Debug */,
+				F808F39419E0398A0002D336 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F808F39519E0398A0002D336 /* Build configuration list for PBXNativeTarget "BookifyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F808F39619E0398A0002D336 /* Debug */,
+				F808F39719E0398A0002D336 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F808F36419E039890002D336 /* Project object */;
+}
