@@ -8,6 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddBookViewController : UITableViewController
+@class AddBookViewController;
+@class BooklistItem;
+
+@protocol AddBookViewControllerDelegate <NSObject>
+
+- (void)addBookViewControllerDidCancel: (AddBookViewController *)controller;
+- (void)addBookViewController: (AddBookViewController *)controller didFinishAddingItem:(BooklistItem*)item;
+
+@end
+
+@interface AddBookViewController : UITableViewController<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *bookTitle;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneBarButton;
+
+
+- (IBAction)cancel;
+- (IBAction)done;
 
 @end

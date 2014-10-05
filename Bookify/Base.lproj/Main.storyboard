@@ -67,28 +67,55 @@
         <!--Add Book-->
         <scene sceneID="fNT-bO-dzC">
             <objects>
-                <tableViewController id="XBp-qS-Fb0" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="VQq-u4-Xyv">
+                <tableViewController id="XBp-qS-Fb0" customClass="AddBookViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="VQq-u4-Xyv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="psw-Dx-vb3">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="psw-Dx-vb3" id="Hh9-UM-FYj">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="tdA-Yg-rwk">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="42" id="psw-Dx-vb3">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="psw-Dx-vb3" id="Hh9-UM-FYj">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Book" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r8P-1f-BXg">
+                                                    <rect key="frame" x="8" y="0.0" width="584" height="42"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="done" destination="XBp-qS-Fb0" eventType="editingDidEndOnExit" id="bZz-IP-hBb"/>
+                                                        <outlet property="delegate" destination="XBp-qS-Fb0" id="vSd-PX-smS"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="XBp-qS-Fb0" id="e6Z-hL-eRe"/>
                             <outlet property="delegate" destination="XBp-qS-Fb0" id="tlc-WA-KyG"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Book" id="E6j-bQ-1xC">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Qbf-Q8-qhg"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="tOS-aW-DkH"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Qbf-Q8-qhg">
+                            <connections>
+                                <action selector="cancel" destination="XBp-qS-Fb0" id="49C-JT-x6x"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="tOS-aW-DkH">
+                            <connections>
+                                <action selector="done" destination="XBp-qS-Fb0" id="gez-aU-ll1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bookTitle" destination="r8P-1f-BXg" id="AaN-fM-2WJ"/>
+                        <outlet property="doneBarButton" destination="tOS-aW-DkH" id="aox-yd-0bq"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YtS-GG-mNU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
