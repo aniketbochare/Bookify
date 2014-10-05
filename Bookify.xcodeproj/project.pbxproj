@@ -19,6 +19,7 @@
 		F808F3AB19E052AA0002D336 /* BookGridCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F3AA19E052AA0002D336 /* BookGridCollectionViewController.m */; };
 		F808F3AE19E0D47A0002D336 /* BookListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F3AD19E0D47A0002D336 /* BookListItem.m */; };
 		F808F3B119E17E0C0002D336 /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F3B019E17E0C0002D336 /* AddBookViewController.m */; };
+		F808F3B319E17E530002D336 /* LIcense.txt in Resources */ = {isa = PBXBuildFile; fileRef = F808F3B219E17E530002D336 /* LIcense.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		F808F3AD19E0D47A0002D336 /* BookListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookListItem.m; sourceTree = "<group>"; };
 		F808F3AF19E17E0C0002D336 /* AddBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBookViewController.h; sourceTree = "<group>"; };
 		F808F3B019E17E0C0002D336 /* AddBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBookViewController.m; sourceTree = "<group>"; };
+		F808F3B219E17E530002D336 /* LIcense.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LIcense.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		F808F36319E039890002D336 = {
 			isa = PBXGroup;
 			children = (
+				F808F3B219E17E530002D336 /* LIcense.txt */,
 				F808F3A119E0491A0002D336 /* .gitignore */,
 				F808F36E19E039890002D336 /* Bookify */,
 				F808F39919E03D8F0002D336 /* Resources */,
@@ -232,6 +235,7 @@
 				F808F37E19E0398A0002D336 /* Main.storyboard in Resources */,
 				F808F39D19E03F900002D336 /* Simple iPhone 6 Wallpaper 07 copy.png in Resources */,
 				F808F38319E0398A0002D336 /* LaunchScreen.xib in Resources */,
+				F808F3B319E17E530002D336 /* LIcense.txt in Resources */,
 				F808F38019E0398A0002D336 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
