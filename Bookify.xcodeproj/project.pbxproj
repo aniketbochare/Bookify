@@ -18,6 +18,7 @@
 		F808F3A519E050760002D336 /* BookListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F3A419E050760002D336 /* BookListTableViewController.m */; };
 		F808F3AB19E052AA0002D336 /* BookGridCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F3AA19E052AA0002D336 /* BookGridCollectionViewController.m */; };
 		F808F3AE19E0D47A0002D336 /* BookListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F3AD19E0D47A0002D336 /* BookListItem.m */; };
+		F808F3B119E17E0C0002D336 /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F3B019E17E0C0002D336 /* AddBookViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		F808F3AA19E052AA0002D336 /* BookGridCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookGridCollectionViewController.m; sourceTree = "<group>"; };
 		F808F3AC19E0D47A0002D336 /* BookListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookListItem.h; sourceTree = "<group>"; };
 		F808F3AD19E0D47A0002D336 /* BookListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookListItem.m; sourceTree = "<group>"; };
+		F808F3AF19E17E0C0002D336 /* AddBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBookViewController.h; sourceTree = "<group>"; };
+		F808F3B019E17E0C0002D336 /* AddBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBookViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,8 @@
 				F808F3AA19E052AA0002D336 /* BookGridCollectionViewController.m */,
 				F808F3AC19E0D47A0002D336 /* BookListItem.h */,
 				F808F3AD19E0D47A0002D336 /* BookListItem.m */,
+				F808F3AF19E17E0C0002D336 /* AddBookViewController.h */,
+				F808F3B019E17E0C0002D336 /* AddBookViewController.m */,
 				F808F37F19E0398A0002D336 /* Images.xcassets */,
 				F808F38119E0398A0002D336 /* LaunchScreen.xib */,
 				F808F36F19E039890002D336 /* Supporting Files */,
@@ -250,6 +255,7 @@
 				F808F3AE19E0D47A0002D336 /* BookListItem.m in Sources */,
 				F808F37519E039890002D336 /* AppDelegate.m in Sources */,
 				F808F37219E039890002D336 /* main.m in Sources */,
+				F808F3B119E17E0C0002D336 /* AddBookViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

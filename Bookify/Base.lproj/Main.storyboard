@@ -21,7 +21,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4041" y="-5432"/>
+            <point key="canvasLocation" x="-4621" y="-6784"/>
         </scene>
         <!--BookList-->
         <scene sceneID="0xd-ge-3vD">
@@ -55,14 +55,44 @@
                     <navigationItem key="navigationItem" title="BookList" id="wDg-1J-ZAJ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="9qd-kV-9BH">
                             <connections>
-                                <action selector="addBook" destination="1pd-sG-IXH" id="yXF-ry-NUr"/>
+                                <segue destination="klG-D0-sQ8" kind="presentation" id="4Wa-nW-FWJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i2Y-JO-DOr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2550" y="-5427"/>
+            <point key="canvasLocation" x="-3142" y="-6784"/>
+        </scene>
+        <!--Add Book-->
+        <scene sceneID="fNT-bO-dzC">
+            <objects>
+                <tableViewController id="XBp-qS-Fb0" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="VQq-u4-Xyv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="psw-Dx-vb3">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="psw-Dx-vb3" id="Hh9-UM-FYj">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="XBp-qS-Fb0" id="e6Z-hL-eRe"/>
+                            <outlet property="delegate" destination="XBp-qS-Fb0" id="tlc-WA-KyG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add Book" id="E6j-bQ-1xC">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Qbf-Q8-qhg"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="tOS-aW-DkH"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YtS-GG-mNU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1539" y="-6788"/>
         </scene>
         <!--Book Grid Collection View Controller-->
         <scene sceneID="n1M-2M-B5X">
@@ -97,7 +127,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwu-sD-0mD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3163" y="-4553"/>
+            <point key="canvasLocation" x="-3883" y="-6017"/>
         </scene>
         <!--List-->
         <scene sceneID="WeY-Cw-DLt">
@@ -116,7 +146,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6K8-8r-rQX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3318" y="-5427"/>
+            <point key="canvasLocation" x="-3906" y="-6784"/>
         </scene>
         <!--Grid-->
         <scene sceneID="YA1-Ik-OIc">
@@ -135,7 +165,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="crD-wy-Pfl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3890" y="-4553"/>
+            <point key="canvasLocation" x="-4621" y="-6017"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="57l-6b-7dG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="klG-D0-sQ8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uX1-3g-hwg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XBp-qS-Fb0" kind="relationship" relationship="rootViewController" id="Pbj-fy-738"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RSV-gi-h6T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2351" y="-6788"/>
         </scene>
     </scenes>
 </document>
