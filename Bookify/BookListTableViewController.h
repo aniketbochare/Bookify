@@ -10,4 +10,6 @@
 
 @interface BookListTableViewController : UITableViewController
 
+- (IBAction)addBook;
+
 @end

@@ -1,18 +1,18 @@
 //
-//  BookListCollectionViewController.m
+//  BookGridCollectionViewController.m
 //  Bookify
 //
 //  Created by Aniket Bochare on 10/4/14.
 //  Copyright (c) 2014 Coral. All rights reserved.
 //
 
-#import "BookListCollectionViewController.h"
+#import "BookGridCollectionViewController.h"
 
-@interface BookListCollectionViewController ()
+@interface BookGridCollectionViewController ()
 
 @end
 
-@implementation BookListCollectionViewController
+@implementation BookGridCollectionViewController
 
 static NSString * const reuseIdentifier = @"Cell";
 

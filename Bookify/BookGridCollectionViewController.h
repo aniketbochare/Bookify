@@ -1,5 +1,5 @@
 //
-//  BookListCollectionViewController.h
+//  BookGridCollectionViewController.h
 //  Bookify
 //
 //  Created by Aniket Bochare on 10/4/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BookListCollectionViewController : UICollectionViewController
+@interface BookGridCollectionViewController : UICollectionViewController
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "BookListTableViewController.h"
+#import "BookListItem.h"
 
 @interface BookListTableViewController ()
 
@@ -14,8 +15,43 @@
 
 @implementation BookListTableViewController
 
+{
+    NSMutableArray *_books;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    _books = [[NSMutableArray alloc] initWithCapacity:20];
+    
+    
+    BookListItem *book;
+    
+    book = [[BookListItem alloc] init];
+    book.bookTitle = @"History";
+    book.checked = NO;
+    [_books addObject:book];
+    
+    book = [[BookListItem alloc] init];
+    book.bookTitle = @"Geography";
+    book.checked = YES;
+    [_books addObject:book];
+    
+    book = [[BookListItem alloc] init];
+    book.bookTitle = @"Software Engineering";
+    book.checked = YES;
+    [_books addObject:book];
+    
+    book = [[BookListItem alloc] init];
+    book.bookTitle = @"Social Science";
+    book.checked = NO;
+    [_books addObject:book];
+    
+    book = [[BookListItem alloc] init];
+    book.bookTitle = @"Music";
+    book.checked = YES;
+    [_books addObject:book];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -32,26 +68,71 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [_books count];
 }
 
-/*
+
+- (void)configureCheckmarkForCell:(UITableViewCell *)cell withBook:(BookListItem *)book
+{
+    
+    if (book.checked) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+}
+
+
+- (void)configureTextForCell:(UITableViewCell *)cell withBook:(BookListItem *)book
+{
+    
+    UILabel *label = (UILabel *)[cell viewWithTag:1000];
+    label.text = book.bookTitle;
+}
+
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookListCell" forIndexPath:indexPath];
+    BookListItem *book = _books[indexPath.row];
+    [self configureCheckmarkForCell:cell withBook:book];
+    [self configureTextForCell:cell withBook:book];
     return cell;
 }
-*/
+
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    BookListItem *book = _books[indexPath.row];
+    book.checked = !book.checked;
+    [self configureCheckmarkForCell:cell withBook:book];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (IBAction)addBook
+{
+    NSInteger lastRowIndex = [_books count];
+    BookListItem* books = [[BookListItem alloc]init];
+    books.bookTitle = @"I am a new row";
+    books.checked = NO;
+    [_books addObject:books];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRowIndex inSection:0];
+    NSArray *indexPaths = @[indexPath];
+    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+}
+
+
 
 /*
 // Override to support conditional editing of the table view.
