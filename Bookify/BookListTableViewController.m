@@ -119,6 +119,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 /*
+ This function helps to add the object to instance variable array. Can be used for testing and was tied to add button before got overriden by the segue.
+ 
 - (IBAction)addBook
 {
     NSInteger lastRowIndex = [_books count];
@@ -188,4 +190,31 @@
     
     
 }
+
+
+#pragma AddBookViewControllerDelegate Methods
+
+- (void)addBookViewController: (AddBookViewController *)controller didFinishAddingBook:(BooklistItem*)book{
+    
+    //Get last row Index for addition
+    NSInteger lastRowIndex = [_books count];
+    
+    //Add Book to the _books instance variable.
+    [_books addObject:book];
+    
+    //Get Index path for the index last row.
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRowIndex inSection:0];
+    //Add the indexpaths to the array as we can add multiple rows.
+    NSArray *indexPaths = @[indexPath];
+    
+    //This funtion is important as it calls the delegate functions to create row view at NSIndexpath and redraws the cell. Use this always for adding row to a table view.
+    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+
+
 @end
