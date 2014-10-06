@@ -7,6 +7,7 @@
 //
 
 #import "AddBookViewController.h"
+#import "BookListItem.h"
 
 @interface AddBookViewController ()
 
@@ -38,14 +39,17 @@
 
 - (IBAction)cancel {
     
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate addBookViewControllerDidCancel:self];
+    
 }
 
 - (IBAction)done {
     
-    NSLog(@"Contents of the text field: %@", self.bookTitle.text);
+    BookListItem *newbook = [[BookListItem alloc] init];
+    newbook.bookTitle = self.bookTitle.text;
+    newbook.checked = NO;
     
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate addBookViewController:self didFinishAddingBook:newbook];
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath

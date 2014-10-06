@@ -55,7 +55,7 @@
                     <navigationItem key="navigationItem" title="BookList" id="wDg-1J-ZAJ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="9qd-kV-9BH">
                             <connections>
-                                <segue destination="klG-D0-sQ8" kind="presentation" id="4Wa-nW-FWJ"/>
+                                <segue destination="klG-D0-sQ8" kind="presentation" identifier="AddBook" id="4Wa-nW-FWJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

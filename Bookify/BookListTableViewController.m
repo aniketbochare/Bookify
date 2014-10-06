@@ -8,6 +8,7 @@
 
 #import "BookListTableViewController.h"
 #import "BookListItem.h"
+#import "AddBookViewController.h"
 
 @interface BookListTableViewController ()
 
@@ -117,7 +118,7 @@
     [self configureCheckmarkForCell:cell withBook:book];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
+/*
 - (IBAction)addBook
 {
     NSInteger lastRowIndex = [_books count];
@@ -131,7 +132,7 @@
     [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
     
 }
-
+*/
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -163,14 +164,28 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"AddBook"]) {
+        // 1 the destination view controller here does not connect to viewcontroller but to the navigation controller.
+        UINavigationController *navigationController = segue.destinationViewController;
+        
+        // 2 Get the reference of the view controller from top view controller of the navigation controller and then cast it to match the addbookview controller.
+        AddBookViewController *controller = (AddBookViewController *)
+        navigationController.topViewController;
+        
+        //3 Assign self as the delegate to get messages from AddViewController if anything happens.
+        controller.delegate = self;
+    }
+    
+    
 }
-*/
-
 @end
