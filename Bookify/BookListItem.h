@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BookListItem : NSObject
+@interface BookListItem : NSObject <NSCoding>
 
 @property (nonatomic, copy) NSString *bookTitle;
 /* Here we use copy but we can use strong and be fine. We will mostly use copy so we can modify objects and noone can. WE own this. Mostly for mutable

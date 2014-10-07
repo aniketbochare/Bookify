@@ -18,7 +18,7 @@
 		F808F3A519E050760002D336 /* BookListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F3A419E050760002D336 /* BookListTableViewController.m */; };
 		F808F3AB19E052AA0002D336 /* BookGridCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F3AA19E052AA0002D336 /* BookGridCollectionViewController.m */; };
 		F808F3AE19E0D47A0002D336 /* BookListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F3AD19E0D47A0002D336 /* BookListItem.m */; };
-		F808F3B119E17E0C0002D336 /* DetailBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F3B019E17E0C0002D336 /* DetailBookViewController.m */; };
+		F808F3B119E17E0C0002D336 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F3B019E17E0C0002D336 /* BookDetailViewController.m */; };
 		F808F3B319E17E530002D336 /* LIcense.txt in Resources */ = {isa = PBXBuildFile; fileRef = F808F3B219E17E530002D336 /* LIcense.txt */; };
 /* End PBXBuildFile section */
 
@@ -52,8 +52,8 @@
 		F808F3AA19E052AA0002D336 /* BookGridCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookGridCollectionViewController.m; sourceTree = "<group>"; };
 		F808F3AC19E0D47A0002D336 /* BookListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookListItem.h; sourceTree = "<group>"; };
 		F808F3AD19E0D47A0002D336 /* BookListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookListItem.m; sourceTree = "<group>"; };
-		F808F3AF19E17E0C0002D336 /* DetailBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailBookViewController.h; sourceTree = "<group>"; };
-		F808F3B019E17E0C0002D336 /* DetailBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailBookViewController.m; sourceTree = "<group>"; };
+		F808F3AF19E17E0C0002D336 /* BookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailViewController.h; sourceTree = "<group>"; };
+		F808F3B019E17E0C0002D336 /* BookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailViewController.m; sourceTree = "<group>"; };
 		F808F3B219E17E530002D336 /* LIcense.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LIcense.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,8 +106,8 @@
 				F808F3A419E050760002D336 /* BookListTableViewController.m */,
 				F808F3A919E052AA0002D336 /* BookGridCollectionViewController.h */,
 				F808F3AA19E052AA0002D336 /* BookGridCollectionViewController.m */,
-				F808F3AF19E17E0C0002D336 /* DetailBookViewController.h */,
-				F808F3B019E17E0C0002D336 /* DetailBookViewController.m */,
+				F808F3AF19E17E0C0002D336 /* BookDetailViewController.h */,
+				F808F3B019E17E0C0002D336 /* BookDetailViewController.m */,
 				F808F3AC19E0D47A0002D336 /* BookListItem.h */,
 				F808F3AD19E0D47A0002D336 /* BookListItem.m */,
 				F808F37F19E0398A0002D336 /* Images.xcassets */,
@@ -259,7 +259,7 @@
 				F808F3AE19E0D47A0002D336 /* BookListItem.m in Sources */,
 				F808F37519E039890002D336 /* AppDelegate.m in Sources */,
 				F808F37219E039890002D336 /* main.m in Sources */,
-				F808F3B119E17E0C0002D336 /* DetailBookViewController.m in Sources */,
+				F808F3B119E17E0C0002D336 /* BookDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

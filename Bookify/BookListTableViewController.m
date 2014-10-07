@@ -8,7 +8,7 @@
 
 #import "BookListTableViewController.h"
 #import "BookListItem.h"
-#import "DetailBookViewController.h"
+#import "BookDetailViewController.h"
 
 @interface BookListTableViewController ()
 
@@ -20,9 +20,22 @@
     NSMutableArray *_books;
 }
 
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder]))
+    {
+        [self loadBooklistItems];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+  
+    /*Used for testing NSMutableArray *_books object creation*/
     
+   /* NSLog(@"Documents folder is %@", [self pathToDocumentDirectory]);
+    NSLog(@"Data file path is %@", [self pathTotheFile]);
     
     _books = [[NSMutableArray alloc] initWithCapacity:20];
     
@@ -53,6 +66,7 @@
     book.bookTitle = @"Music";
     book.checked = YES;
     [_books addObject:book];
+    */
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -117,6 +131,7 @@
     BookListItem *book = _books[indexPath.row];
     book.checked = !book.checked;
     [self configureCheckmarkForCell:cell withBook:book];
+    [self saveBookListItems];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 /*
@@ -141,7 +156,9 @@
 {
     [_books removeObjectAtIndex:indexPath.row];
     NSArray *indexPaths = @[indexPath];
+    [self saveBookListItems];
     [tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+    
     
 }
 
@@ -185,7 +202,7 @@
         UINavigationController *navigationController = segue.destinationViewController;
         
         // 2 Get the reference of the view controller from top view controller of the navigation controller and then cast it to match the addbookview controller.
-        DetailBookViewController *controller = (DetailBookViewController *) navigationController.topViewController;
+        BookDetailViewController *controller = (BookDetailViewController *) navigationController.topViewController;
         
         //3 Assign self as the delegate to get messages from AddViewController if anything happens.
         controller.delegate = self;
@@ -195,7 +212,7 @@
     else if ([segue.identifier isEqualToString:@"EditBook"])
     {
         UINavigationController *navigationController = segue.destinationViewController;
-        DetailBookViewController *controller = (DetailBookViewController *) navigationController.topViewController;
+        BookDetailViewController *controller = (BookDetailViewController *) navigationController.topViewController;
         controller.delegate = self;
         NSLog(@"Assigned Delegate");
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
@@ -205,16 +222,16 @@
 }
 
 
-#pragma AddBookViewControllerDelegate Methods
+#pragma BookDetailViewControllerDelegate Methods
 
 
-- (void)addBookViewControllerDidCancel: (DetailBookViewController *)controller
+- (void)bookDetailViewControllerDidCancel: (BookDetailViewController *)controller
 {
     NSLog(@"Calledhere");
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)addBookViewController: (DetailBookViewController *)controller didFinishAddingBook:(BookListItem*)book{
+- (void)bookDetailViewController: (BookDetailViewController *)controller didFinishAddingBook:(BookListItem*)book{
     
     //Get last row Index for addition
     NSInteger lastRowIndex = [_books count];
@@ -230,12 +247,13 @@
     //This funtion is important as it calls the delegate functions to create row view at NSIndexpath and redraws the cell. Use this always for adding row to a table view.
     [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
     
+    [self saveBookListItems];
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
-- (void)addBookViewController: (DetailBookViewController *)controller didFinishEditingBook:(BookListItem*)book{
+- (void)bookDetailViewController: (BookDetailViewController *)controller didFinishEditingBook:(BookListItem*)book{
     
     NSInteger editBookIndex = [_books indexOfObject:book];
     NSIndexPath *editIndexPath = [NSIndexPath indexPathForRow:editBookIndex inSection:0];
@@ -246,12 +264,49 @@
     
     [self configureTextForCell:editCell withBook:book];
     
+    [self saveBookListItems];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
     
     
 }
 
+/*Adding persistance to the data. Data stores in document directory and hence sandboxed*/
 
+- (NSString *)pathToDocumentDirectory
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectoryPath = [paths firstObject];
+    return documentsDirectoryPath;
+}
 
+- (NSString *)pathTotheFile
+{
+    return [[self pathToDocumentDirectory] stringByAppendingPathComponent:@"BookList.plist"];
+}
+
+- (void)saveBookListItems
+{
+    NSMutableData *data = [[NSMutableData alloc] init];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    [archiver encodeObject:_books forKey:@"BookListItem"];
+    [archiver finishEncoding];
+    [data writeToFile:[self pathTotheFile] atomically:YES];
+}
+
+- (void)loadBooklistItems {
+    NSString *path = [self pathTotheFile];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path])
+    {
+        NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+        _books = [unarchiver decodeObjectForKey:@"BookListItem"];
+        [unarchiver finishDecoding];
+    }
+    else
+    {
+        _books = [[NSMutableArray alloc] initWithCapacity:20];
+    }
+}
 
 @end

@@ -1,19 +1,19 @@
 //
-//  AddBookViewController.m
+//  BookDetailViewController.m
 //  Bookify
 //
 //  Created by Aniket Bochare on 10/5/14.
 //  Copyright (c) 2014 Coral. All rights reserved.
 //
 
-#import "DetailBookViewController.h"
+#import "BookDetailViewController.h"
 #import "BookListItem.h"
 
-@interface DetailBookViewController ()
+@interface BookDetailViewController ()
 
 @end
 
-@implementation DetailBookViewController
+@implementation BookDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,7 +48,7 @@
 - (IBAction)cancel
 {
     
-    [self.delegate addBookViewControllerDidCancel:self];
+    [self.delegate bookDetailViewControllerDidCancel:self];
     
 }
 
@@ -59,14 +59,14 @@
     if (self.bookToEdit.bookTitle)
     {
         self.bookToEdit.bookTitle = self.bookTitle.text;
-        [self.delegate addBookViewController:self didFinishEditingBook:self.bookToEdit];
+        [self.delegate bookDetailViewController:self didFinishEditingBook:self.bookToEdit];
     }
     else{
     BookListItem *newbook = [[BookListItem alloc] init];
     newbook.bookTitle = self.bookTitle.text;
     newbook.checked = NO;
     
-    [self.delegate addBookViewController:self didFinishAddingBook:newbook];
+    [self.delegate bookDetailViewController:self didFinishAddingBook:newbook];
     }
 }
 

@@ -73,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="-3086" y="-6788"/>
         </scene>
-        <!--Add Book-->
+        <!--BookDetail-->
         <scene sceneID="fNT-bO-dzC">
             <objects>
-                <tableViewController id="XBp-qS-Fb0" customClass="DetailBookViewController" sceneMemberID="viewController">
+                <tableViewController id="XBp-qS-Fb0" userLabel="BookDetail" customClass="BookDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="VQq-u4-Xyv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
