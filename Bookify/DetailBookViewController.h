@@ -9,25 +9,25 @@
 #import <UIKit/UIKit.h>
 
 
-@class AddBookViewController;
+@class DetailBookViewController;
 @class BookListItem;
 
 @protocol AddBookViewControllerDelegate <NSObject>
 
-- (void)addBookViewControllerDidCancel: (AddBookViewController *)controller;
+- (void)addBookViewControllerDidCancel: (DetailBookViewController *)controller;
 /*Protocol function to add new book*/
 
-- (void)addBookViewController: (AddBookViewController *)controller didFinishAddingBook:(BookListItem*)book;
+- (void)addBookViewController: (DetailBookViewController *)controller didFinishAddingBook:(BookListItem*)book;
 
 /*Protocol function to edit new book*/
 
-- (void)addBookViewController: (AddBookViewController *)controller didFinishEditingBook:(BookListItem*)book;
+- (void)addBookViewController: (DetailBookViewController *)controller didFinishEditingBook:(BookListItem*)book;
 
 
 
 @end
 
-@interface AddBookViewController : UITableViewController<UITextFieldDelegate>
+@interface DetailBookViewController : UITableViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *bookTitle;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneBarButton;

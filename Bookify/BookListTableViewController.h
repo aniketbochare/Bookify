@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AddBookViewController.h"
+#import "DetailBookViewController.h"
 
 @interface BookListTableViewController : UITableViewController<AddBookViewControllerDelegate>
 

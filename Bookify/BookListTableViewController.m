@@ -8,7 +8,7 @@
 
 #import "BookListTableViewController.h"
 #import "BookListItem.h"
-#import "AddBookViewController.h"
+#import "DetailBookViewController.h"
 
 @interface BookListTableViewController ()
 
@@ -185,7 +185,7 @@
         UINavigationController *navigationController = segue.destinationViewController;
         
         // 2 Get the reference of the view controller from top view controller of the navigation controller and then cast it to match the addbookview controller.
-        AddBookViewController *controller = (AddBookViewController *) navigationController.topViewController;
+        DetailBookViewController *controller = (DetailBookViewController *) navigationController.topViewController;
         
         //3 Assign self as the delegate to get messages from AddViewController if anything happens.
         controller.delegate = self;
@@ -195,7 +195,7 @@
     else if ([segue.identifier isEqualToString:@"EditBook"])
     {
         UINavigationController *navigationController = segue.destinationViewController;
-        AddBookViewController *controller = (AddBookViewController *) navigationController.topViewController;
+        DetailBookViewController *controller = (DetailBookViewController *) navigationController.topViewController;
         controller.delegate = self;
         NSLog(@"Assigned Delegate");
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
@@ -208,13 +208,13 @@
 #pragma AddBookViewControllerDelegate Methods
 
 
-- (void)addBookViewControllerDidCancel: (AddBookViewController *)controller
+- (void)addBookViewControllerDidCancel: (DetailBookViewController *)controller
 {
     NSLog(@"Calledhere");
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)addBookViewController: (AddBookViewController *)controller didFinishAddingBook:(BookListItem*)book{
+- (void)addBookViewController: (DetailBookViewController *)controller didFinishAddingBook:(BookListItem*)book{
     
     //Get last row Index for addition
     NSInteger lastRowIndex = [_books count];
@@ -235,7 +235,7 @@
     
 }
 
-- (void)addBookViewController: (AddBookViewController *)controller didFinishEditingBook:(BookListItem*)book{
+- (void)addBookViewController: (DetailBookViewController *)controller didFinishEditingBook:(BookListItem*)book{
     
     NSInteger editBookIndex = [_books indexOfObject:book];
     NSIndexPath *editIndexPath = [NSIndexPath indexPathForRow:editBookIndex inSection:0];

@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Coral. All rights reserved.
 //
 
-#import "AddBookViewController.h"
+#import "DetailBookViewController.h"
 #import "BookListItem.h"
 
-@interface AddBookViewController ()
+@interface DetailBookViewController ()
 
 @end
 
-@implementation AddBookViewController
+@implementation DetailBookViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
