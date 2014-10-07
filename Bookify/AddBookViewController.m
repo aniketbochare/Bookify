@@ -23,6 +23,14 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    if (self.bookToEdit != nil) {
+        self.title = @"Edit Item";
+        self.bookTitle.text = self.bookToEdit.bookTitle;
+    }
+    
+    NSLog(@"Inside View load");
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,7 +45,8 @@
     [self.bookTitle becomeFirstResponder];
 }
 
-- (IBAction)cancel {
+- (IBAction)cancel
+{
     
     [self.delegate addBookViewControllerDidCancel:self];
     
@@ -45,11 +54,20 @@
 
 - (IBAction)done {
     
+     NSLog(@"Calling Done");
+    
+    if (self.bookToEdit.bookTitle)
+    {
+        self.bookToEdit.bookTitle = self.bookTitle.text;
+        [self.delegate addBookViewController:self didFinishEditingBook:self.bookToEdit];
+    }
+    else{
     BookListItem *newbook = [[BookListItem alloc] init];
     newbook.bookTitle = self.bookTitle.text;
     newbook.checked = NO;
     
     [self.delegate addBookViewController:self didFinishAddingBook:newbook];
+    }
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath

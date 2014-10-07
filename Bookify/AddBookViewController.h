@@ -10,12 +10,20 @@
 
 
 @class AddBookViewController;
-@class BooklistItem;
+@class BookListItem;
 
 @protocol AddBookViewControllerDelegate <NSObject>
 
 - (void)addBookViewControllerDidCancel: (AddBookViewController *)controller;
-- (void)addBookViewController: (AddBookViewController *)controller didFinishAddingBook:(BooklistItem*)book;
+/*Protocol function to add new book*/
+
+- (void)addBookViewController: (AddBookViewController *)controller didFinishAddingBook:(BookListItem*)book;
+
+/*Protocol function to edit new book*/
+
+- (void)addBookViewController: (AddBookViewController *)controller didFinishEditingBook:(BookListItem*)book;
+
+
 
 @end
 
@@ -24,6 +32,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *bookTitle;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneBarButton;
 @property (nonatomic, weak) id <AddBookViewControllerDelegate> delegate;
+
+@property (nonatomic, strong) BookListItem *bookToEdit;
+
 
 - (IBAction)cancel;
 - (IBAction)done;

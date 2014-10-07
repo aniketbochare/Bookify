@@ -81,11 +81,12 @@
 
 - (void)configureCheckmarkForCell:(UITableViewCell *)cell withBook:(BookListItem *)book
 {
+    UILabel *label = (UILabel *)[cell viewWithTag:1001];
     
     if (book.checked) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        label.text = @"√";
     } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        label.text = @"";
     }
 }
 
@@ -175,26 +176,45 @@
     
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    //NSLog(segue.identifier);
     
     if ([segue.identifier isEqualToString:@"AddBook"]) {
+        
+        NSLog(@"Inside If");
         // 1 the destination view controller here does not connect to viewcontroller but to the navigation controller.
         UINavigationController *navigationController = segue.destinationViewController;
         
         // 2 Get the reference of the view controller from top view controller of the navigation controller and then cast it to match the addbookview controller.
-        AddBookViewController *controller = (AddBookViewController *)
-        navigationController.topViewController;
+        AddBookViewController *controller = (AddBookViewController *) navigationController.topViewController;
         
         //3 Assign self as the delegate to get messages from AddViewController if anything happens.
         controller.delegate = self;
+        
+        
     }
-    
+    else if ([segue.identifier isEqualToString:@"EditBook"])
+    {
+        UINavigationController *navigationController = segue.destinationViewController;
+        AddBookViewController *controller = (AddBookViewController *) navigationController.topViewController;
+        controller.delegate = self;
+        NSLog(@"Assigned Delegate");
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        controller.bookToEdit = _books[indexPath.row];
+    }
     
 }
 
 
 #pragma AddBookViewControllerDelegate Methods
 
-- (void)addBookViewController: (AddBookViewController *)controller didFinishAddingBook:(BooklistItem*)book{
+
+- (void)addBookViewControllerDidCancel: (AddBookViewController *)controller
+{
+    NSLog(@"Calledhere");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)addBookViewController: (AddBookViewController *)controller didFinishAddingBook:(BookListItem*)book{
     
     //Get last row Index for addition
     NSInteger lastRowIndex = [_books count];
@@ -214,6 +234,23 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+
+- (void)addBookViewController: (AddBookViewController *)controller didFinishEditingBook:(BookListItem*)book{
+    
+    NSInteger editBookIndex = [_books indexOfObject:book];
+    NSIndexPath *editIndexPath = [NSIndexPath indexPathForRow:editBookIndex inSection:0];
+    
+    //Get that cell with this indexpath
+    
+    UITableViewCell *editCell = [self.tableView cellForRowAtIndexPath:editIndexPath];
+    
+    [self configureTextForCell:editCell withBook:book];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    
+}
+
 
 
 
