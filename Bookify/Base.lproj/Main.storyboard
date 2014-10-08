@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14A379b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14A386b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
     </dependencies>
@@ -22,6 +22,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4621" y="-6784"/>
+        </scene>
+        <!--Books-->
+        <scene sceneID="ef3-MV-ZPv">
+            <objects>
+                <tableViewController id="3ZY-bc-pt3" customClass="BooksTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1qf-EI-cTG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="3ZY-bc-pt3" id="frQ-fx-M3i"/>
+                            <outlet property="delegate" destination="3ZY-bc-pt3" id="Cba-zj-uyb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Books" id="pwG-YK-el1"/>
+                    <connections>
+                        <segue destination="1pd-sG-IXH" kind="show" identifier="ShowPages" id="qk8-mx-bIA"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KGt-oe-wev" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3207" y="-7620"/>
         </scene>
         <!--PageList-->
         <scene sceneID="0xd-ge-3vD">
@@ -71,7 +93,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i2Y-JO-DOr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3086" y="-6788"/>
+            <point key="canvasLocation" x="-3134" y="-6620"/>
         </scene>
         <!--PageDetail-->
         <scene sceneID="fNT-bO-dzC">
@@ -163,7 +185,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwu-sD-0mD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3883" y="-6017"/>
+            <point key="canvasLocation" x="-3919" y="-5865"/>
         </scene>
         <!--List-->
         <scene sceneID="WeY-Cw-DLt">
@@ -177,7 +199,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="1pd-sG-IXH" kind="relationship" relationship="rootViewController" id="GLH-zz-5Nh"/>
+                        <segue destination="3ZY-bc-pt3" kind="relationship" relationship="rootViewController" id="tie-KF-hy0"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6K8-8r-rQX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -201,7 +223,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="crD-wy-Pfl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4621" y="-6017"/>
+            <point key="canvasLocation" x="-4653" y="-5849"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="57l-6b-7dG">

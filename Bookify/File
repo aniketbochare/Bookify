@@ -1,0 +1,15 @@
+_books = [[NSMutableArray alloc] initWithCapacity:20];
+BookbookItem *book;
+book = [[BookbookItem alloc]
+book.name = @"Birthdays";
+[_books addObject:book];
+book = [[BookbookItem alloc]
+book.name = @"Groceries";
+[_books addObject:book];
+book = [[BookbookItem alloc]
+book.name = @"Cool Apps";
+[_books addObject:book];
+book = [[BookbookItem alloc] init]; book.name = @"To Do";
+[_books addObject:book];
+}
+return self;
