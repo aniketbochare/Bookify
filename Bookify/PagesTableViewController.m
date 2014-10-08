@@ -1,30 +1,30 @@
 //
-//  BookListTableViewController.m
+//  PagesTableViewController.m
 //  Bookify
 //
 //  Created by Aniket Bochare on 10/4/14.
 //  Copyright (c) 2014 Coral. All rights reserved.
 //
 
-#import "BookListTableViewController.h"
-#import "BookListItem.h"
-#import "BookDetailViewController.h"
+#import "PagesTableViewController.h"
+#import "PageListItem.h"
+#import "PageDetailViewController.h"
 
-@interface BookListTableViewController ()
+@interface PagesTableViewController ()
 
 @end
 
-@implementation BookListTableViewController
+@implementation PagesTableViewController
 
 {
-    NSMutableArray *_books;
+    NSMutableArray *_pages;
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     if ((self = [super initWithCoder:aDecoder]))
     {
-        [self loadBooklistItems];
+        [self loadPageListItems];
     }
     return self;
 }
@@ -32,40 +32,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   
-    /*Used for testing NSMutableArray *_books object creation*/
+    /*Used for testing NSMutableArray *_pages object creation*/
     
    /* NSLog(@"Documents folder is %@", [self pathToDocumentDirectory]);
     NSLog(@"Data file path is %@", [self pathTotheFile]);
     
-    _books = [[NSMutableArray alloc] initWithCapacity:20];
+    _pages = [[NSMutableArray alloc] initWithCapacity:20];
     
     
-    BookListItem *book;
+    PageListItem *page;
     
-    book = [[BookListItem alloc] init];
-    book.bookTitle = @"History";
-    book.checked = NO;
-    [_books addObject:book];
+    page = [[PageListItem alloc] init];
+    page.PageTitle = @"History";
+    page.checked = NO;
+    [_pages addObject:page];
     
-    book = [[BookListItem alloc] init];
-    book.bookTitle = @"Geography";
-    book.checked = YES;
-    [_books addObject:book];
+    page = [[PageListItem alloc] init];
+    page.PageTitle = @"Geography";
+    page.checked = YES;
+    [_pages addObject:page];
     
-    book = [[BookListItem alloc] init];
-    book.bookTitle = @"Software Engineering";
-    book.checked = YES;
-    [_books addObject:book];
+    page = [[PageListItem alloc] init];
+    page.PageTitle = @"Software Engineering";
+    page.checked = YES;
+    [_pages addObject:page];
     
-    book = [[BookListItem alloc] init];
-    book.bookTitle = @"Social Science";
-    book.checked = NO;
-    [_books addObject:book];
+    page = [[PageListItem alloc] init];
+    page.PageTitle = @"Social Science";
+    page.checked = NO;
+    [_pages addObject:page];
     
-    book = [[BookListItem alloc] init];
-    book.bookTitle = @"Music";
-    book.checked = YES;
-    [_books addObject:book];
+    page = [[PageListItem alloc] init];
+    page.PageTitle = @"Music";
+    page.checked = YES;
+    [_pages addObject:page];
     */
     
     // Uncomment the following line to preserve selection between presentations.
@@ -89,15 +89,15 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [_books count];
+    return [_pages count];
 }
 
 
-- (void)configureCheckmarkForCell:(UITableViewCell *)cell withBook:(BookListItem *)book
+- (void)configureCheckmarkForCell:(UITableViewCell *)cell withPage:(PageListItem *)page
 {
     UILabel *label = (UILabel *)[cell viewWithTag:1001];
     
-    if (book.checked) {
+    if (page.checked) {
         label.text = @"√";
     } else {
         label.text = @"";
@@ -105,21 +105,21 @@
 }
 
 
-- (void)configureTextForCell:(UITableViewCell *)cell withBook:(BookListItem *)book
+- (void)configureTextForCell:(UITableViewCell *)cell withPage:(PageListItem *)page
 {
     
     UILabel *label = (UILabel *)[cell viewWithTag:1000];
-    label.text = book.bookTitle;
+    label.text = page.PageTitle;
 }
 
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookListCell" forIndexPath:indexPath];
-    BookListItem *book = _books[indexPath.row];
-    [self configureCheckmarkForCell:cell withBook:book];
-    [self configureTextForCell:cell withBook:book];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PageListCell" forIndexPath:indexPath];
+    PageListItem *page = _pages[indexPath.row];
+    [self configureCheckmarkForCell:cell withPage:page];
+    [self configureTextForCell:cell withPage:page];
     return cell;
 }
 
@@ -128,10 +128,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    BookListItem *book = _books[indexPath.row];
-    book.checked = !book.checked;
-    [self configureCheckmarkForCell:cell withBook:book];
-    [self saveBookListItems];
+    PageListItem *page = _pages[indexPath.row];
+    page.checked = !page.checked;
+    [self configureCheckmarkForCell:cell withPage:page];
+    [self savePageListItems];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 /*
@@ -139,11 +139,11 @@
  
 - (IBAction)addBook
 {
-    NSInteger lastRowIndex = [_books count];
-    BookListItem* books = [[BookListItem alloc]init];
-    books.bookTitle = @"New Book";
-    books.checked = NO;
-    [_books addObject:books];
+    NSInteger lastRowIndex = [_pages count];
+    PageListItem* pages = [[PageListItem alloc]init];
+    pages.PageTitle = @"New Page";
+    pages.checked = NO;
+    [_pages addObject:pages];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRowIndex inSection:0];
     NSArray *indexPaths = @[indexPath];
@@ -154,9 +154,9 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [_books removeObjectAtIndex:indexPath.row];
+    [_pages removeObjectAtIndex:indexPath.row];
     NSArray *indexPaths = @[indexPath];
-    [self saveBookListItems];
+    [self savePageListItems];
     [tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
     
     
@@ -195,49 +195,49 @@
     // Pass the selected object to the new view controller.
     //NSLog(segue.identifier);
     
-    if ([segue.identifier isEqualToString:@"AddBook"]) {
+    if ([segue.identifier isEqualToString:@"AddPage"]) {
         
         NSLog(@"Inside If");
         // 1 the destination view controller here does not connect to viewcontroller but to the navigation controller.
         UINavigationController *navigationController = segue.destinationViewController;
         
-        // 2 Get the reference of the view controller from top view controller of the navigation controller and then cast it to match the addbookview controller.
-        BookDetailViewController *controller = (BookDetailViewController *) navigationController.topViewController;
+        // 2 Get the reference of the view controller from top view controller of the navigation controller and then cast it to match the addpageview controller.
+        PageDetailViewController *controller = (PageDetailViewController *) navigationController.topViewController;
         
         //3 Assign self as the delegate to get messages from AddViewController if anything happens.
         controller.delegate = self;
         
         
     }
-    else if ([segue.identifier isEqualToString:@"EditBook"])
+    else if ([segue.identifier isEqualToString:@"EditPage"])
     {
         UINavigationController *navigationController = segue.destinationViewController;
-        BookDetailViewController *controller = (BookDetailViewController *) navigationController.topViewController;
+        PageDetailViewController *controller = (PageDetailViewController *) navigationController.topViewController;
         controller.delegate = self;
         NSLog(@"Assigned Delegate");
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        controller.bookToEdit = _books[indexPath.row];
+        controller.pageToEdit = _pages[indexPath.row];
     }
     
 }
 
 
-#pragma BookDetailViewControllerDelegate Methods
+#pragma PageDetailViewControllerDelegate Methods
 
 
-- (void)bookDetailViewControllerDidCancel: (BookDetailViewController *)controller
+- (void)pageDetailViewControllerDidCancel: (PageDetailViewController *)controller
 {
     NSLog(@"Calledhere");
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)bookDetailViewController: (BookDetailViewController *)controller didFinishAddingBook:(BookListItem*)book{
+- (void)pageDetailViewController: (PageDetailViewController *)controller didFinishAddingPage:(PageListItem*)page{
     
     //Get last row Index for addition
-    NSInteger lastRowIndex = [_books count];
+    NSInteger lastRowIndex = [_pages count];
     
-    //Add Book to the _books instance variable.
-    [_books addObject:book];
+    //Add Page to the _pages instance variable.
+    [_pages addObject:page];
     
     //Get Index path for the index last row.
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRowIndex inSection:0];
@@ -247,24 +247,24 @@
     //This funtion is important as it calls the delegate functions to create row view at NSIndexpath and redraws the cell. Use this always for adding row to a table view.
     [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
     
-    [self saveBookListItems];
+    [self savePageListItems];
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
-- (void)bookDetailViewController: (BookDetailViewController *)controller didFinishEditingBook:(BookListItem*)book{
+- (void)pageDetailViewController: (PageDetailViewController *)controller didFinishEditingPage:(PageListItem*)page{
     
-    NSInteger editBookIndex = [_books indexOfObject:book];
-    NSIndexPath *editIndexPath = [NSIndexPath indexPathForRow:editBookIndex inSection:0];
+    NSInteger editPageIndex = [_pages indexOfObject:page];
+    NSIndexPath *editIndexPath = [NSIndexPath indexPathForRow:editPageIndex inSection:0];
     
     //Get that cell with this indexpath
     
     UITableViewCell *editCell = [self.tableView cellForRowAtIndexPath:editIndexPath];
     
-    [self configureTextForCell:editCell withBook:book];
+    [self configureTextForCell:editCell withPage:page];
     
-    [self saveBookListItems];
+    [self savePageListItems];
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
@@ -282,30 +282,30 @@
 
 - (NSString *)pathTotheFile
 {
-    return [[self pathToDocumentDirectory] stringByAppendingPathComponent:@"BookList.plist"];
+    return [[self pathToDocumentDirectory] stringByAppendingPathComponent:@"PageList.plist"];
 }
 
-- (void)saveBookListItems
+- (void)savePageListItems
 {
     NSMutableData *data = [[NSMutableData alloc] init];
     NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
-    [archiver encodeObject:_books forKey:@"BookListItem"];
+    [archiver encodeObject:_pages forKey:@"PageListItem"];
     [archiver finishEncoding];
     [data writeToFile:[self pathTotheFile] atomically:YES];
 }
 
-- (void)loadBooklistItems {
+- (void)loadPageListItems {
     NSString *path = [self pathTotheFile];
     if ([[NSFileManager defaultManager] fileExistsAtPath:path])
     {
         NSData *data = [[NSData alloc] initWithContentsOfFile:path];
         NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
-        _books = [unarchiver decodeObjectForKey:@"BookListItem"];
+        _pages = [unarchiver decodeObjectForKey:@"PageListItem"];
         [unarchiver finishDecoding];
     }
     else
     {
-        _books = [[NSMutableArray alloc] initWithCapacity:20];
+        _pages = [[NSMutableArray alloc] initWithCapacity:20];
     }
 }
 

@@ -1,19 +1,19 @@
 //
-//  BookDetailViewController.m
+//  PageDetailViewController.m
 //  Bookify
 //
 //  Created by Aniket Bochare on 10/5/14.
 //  Copyright (c) 2014 Coral. All rights reserved.
 //
 
-#import "BookDetailViewController.h"
-#import "BookListItem.h"
+#import "PageDetailViewController.h"
+#import "PageListItem.h"
 
-@interface BookDetailViewController ()
+@interface PageDetailViewController ()
 
 @end
 
-@implementation BookDetailViewController
+@implementation PageDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,9 +24,9 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    if (self.bookToEdit != nil) {
+    if (self.pageToEdit != nil) {
         self.title = @"Edit Item";
-        self.bookTitle.text = self.bookToEdit.bookTitle;
+        self.PageTitle.text = self.pageToEdit.PageTitle;
     }
     
     NSLog(@"Inside View load");
@@ -42,13 +42,13 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.bookTitle becomeFirstResponder];
+    [self.PageTitle becomeFirstResponder];
 }
 
 - (IBAction)cancel
 {
     
-    [self.delegate bookDetailViewControllerDidCancel:self];
+    [self.delegate pageDetailViewControllerDidCancel:self];
     
 }
 
@@ -56,17 +56,17 @@
     
      NSLog(@"Calling Done");
     
-    if (self.bookToEdit.bookTitle)
+    if (self.pageToEdit.PageTitle)
     {
-        self.bookToEdit.bookTitle = self.bookTitle.text;
-        [self.delegate bookDetailViewController:self didFinishEditingBook:self.bookToEdit];
+        self.pageToEdit.PageTitle = self.PageTitle.text;
+        [self.delegate pageDetailViewController:self didFinishEditingPage:self.pageToEdit];
     }
     else{
-    BookListItem *newbook = [[BookListItem alloc] init];
-    newbook.bookTitle = self.bookTitle.text;
-    newbook.checked = NO;
+    PageListItem *newpage = [[PageListItem alloc] init];
+    newpage.PageTitle = self.PageTitle.text;
+    newpage.checked = NO;
     
-    [self.delegate bookDetailViewController:self didFinishAddingBook:newbook];
+    [self.delegate pageDetailViewController:self didFinishAddingPage:newpage];
     }
 }
 

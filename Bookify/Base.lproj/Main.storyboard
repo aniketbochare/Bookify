@@ -23,21 +23,21 @@
             </objects>
             <point key="canvasLocation" x="-4621" y="-6784"/>
         </scene>
-        <!--BookList-->
+        <!--PageList-->
         <scene sceneID="0xd-ge-3vD">
             <objects>
-                <tableViewController id="1pd-sG-IXH" customClass="BookListTableViewController" sceneMemberID="viewController">
+                <tableViewController id="1pd-sG-IXH" customClass="PagesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rZ2-0W-upw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="BookListCell" id="HS6-d0-hA4">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="PageListCell" id="HS6-d0-hA4">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HS6-d0-hA4" id="Mpa-72-mJh">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Book List Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeB-59-xh8">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Page List Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeB-59-xh8">
                                             <rect key="frame" x="34" y="8" width="519" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -52,7 +52,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="klG-D0-sQ8" kind="presentation" identifier="EditBook" trigger="accessoryAction" id="jDv-OZ-PX2"/>
+                                    <segue destination="klG-D0-sQ8" kind="presentation" identifier="EditPage" trigger="accessoryAction" id="jDv-OZ-PX2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -61,10 +61,10 @@
                             <outlet property="delegate" destination="1pd-sG-IXH" id="7GJ-9w-QIS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="BookList" id="wDg-1J-ZAJ">
+                    <navigationItem key="navigationItem" title="PageList" id="wDg-1J-ZAJ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="9qd-kV-9BH">
                             <connections>
-                                <segue destination="klG-D0-sQ8" kind="presentation" identifier="AddBook" id="83j-w0-9Dp"/>
+                                <segue destination="klG-D0-sQ8" kind="presentation" identifier="AddPage" id="83j-w0-9Dp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -73,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="-3086" y="-6788"/>
         </scene>
-        <!--BookDetail-->
+        <!--PageDetail-->
         <scene sceneID="fNT-bO-dzC">
             <objects>
-                <tableViewController id="XBp-qS-Fb0" userLabel="BookDetail" customClass="BookDetailViewController" sceneMemberID="viewController">
+                <tableViewController id="XBp-qS-Fb0" userLabel="PageDetail" customClass="PageDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="VQq-u4-Xyv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,7 +89,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="psw-Dx-vb3" id="Hh9-UM-FYj">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Book" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r8P-1f-BXg">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Page Title" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r8P-1f-BXg">
                                                     <rect key="frame" x="8" y="0.0" width="584" height="42"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -109,7 +109,7 @@
                             <outlet property="delegate" destination="XBp-qS-Fb0" id="tlc-WA-KyG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Book" id="E6j-bQ-1xC">
+                    <navigationItem key="navigationItem" title="Add Page" id="E6j-bQ-1xC">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Qbf-Q8-qhg">
                             <connections>
                                 <action selector="cancel" destination="XBp-qS-Fb0" id="49C-JT-x6x"/>
@@ -122,7 +122,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="bookTitle" destination="r8P-1f-BXg" id="AaN-fM-2WJ"/>
+                        <outlet property="PageTitle" destination="r8P-1f-BXg" id="AaN-fM-2WJ"/>
                         <outlet property="doneBarButton" destination="tOS-aW-DkH" id="aox-yd-0bq"/>
                     </connections>
                 </tableViewController>
@@ -224,6 +224,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jDv-OZ-PX2"/>
+        <segue reference="83j-w0-9Dp"/>
     </inferredMetricsTieBreakers>
 </document>

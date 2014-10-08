@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Coral. All rights reserved.
 //
 
-#import "BookListItem.h"
+#import "PageListItem.h"
 
-@implementation BookListItem
+@implementation PageListItem
 
 - (void)toggleChecked
 {
@@ -18,7 +18,7 @@
 /*Implementing NScoding protocol methods for BooklistItem. This will help us to save data on disk*/
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeObject:self.bookTitle forKey:@"bookTitle"];
+    [aCoder encodeObject:self.PageTitle forKey:@"PageTitle"];
     [aCoder encodeBool:self.checked forKey:@"Checked"];
 
 }
@@ -27,7 +27,7 @@
 {
     if (self = [super init])
     {
-        self.bookTitle= [aDecoder decodeObjectForKey:@"bookTitle"];
+        self.PageTitle= [aDecoder decodeObjectForKey:@"PageTitle"];
         self.checked= [aDecoder decodeBoolForKey:@"Checked"];
     }
     return self;
