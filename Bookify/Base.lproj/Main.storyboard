@@ -21,7 +21,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4621" y="-6784"/>
+            <point key="canvasLocation" x="-4697" y="-6784"/>
         </scene>
         <!--Books-->
         <scene sceneID="ef3-MV-ZPv">
@@ -36,14 +36,20 @@
                             <outlet property="delegate" destination="3ZY-bc-pt3" id="Cba-zj-uyb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Books" id="pwG-YK-el1"/>
+                    <navigationItem key="navigationItem" title="Books" id="pwG-YK-el1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="o3t-yt-YEn">
+                            <connections>
+                                <segue destination="JX4-o8-9Vc" kind="presentation" identifier="EditBook" id="waV-6k-n4b"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="1pd-sG-IXH" kind="show" identifier="ShowPages" id="qk8-mx-bIA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGt-oe-wev" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3207" y="-7620"/>
+            <point key="canvasLocation" x="-3331" y="-6784"/>
         </scene>
         <!--PageList-->
         <scene sceneID="0xd-ge-3vD">
@@ -93,12 +99,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i2Y-JO-DOr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3134" y="-6620"/>
+            <point key="canvasLocation" x="-2602" y="-6784"/>
         </scene>
         <!--PageDetail-->
         <scene sceneID="fNT-bO-dzC">
             <objects>
-                <tableViewController id="XBp-qS-Fb0" userLabel="PageDetail" customClass="PageDetailViewController" sceneMemberID="viewController">
+                <tableViewController title="Add Page" id="XBp-qS-Fb0" userLabel="PageDetail" customClass="PageDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="VQq-u4-Xyv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -150,7 +156,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YtS-GG-mNU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1539" y="-6788"/>
+            <point key="canvasLocation" x="-1003" y="-6768"/>
         </scene>
         <!--Book Grid Collection View Controller-->
         <scene sceneID="n1M-2M-B5X">
@@ -185,7 +191,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwu-sD-0mD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3919" y="-5865"/>
+            <point key="canvasLocation" x="-3915" y="-5225"/>
         </scene>
         <!--List-->
         <scene sceneID="WeY-Cw-DLt">
@@ -204,7 +210,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6K8-8r-rQX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3906" y="-6784"/>
+            <point key="canvasLocation" x="-3974" y="-6784"/>
         </scene>
         <!--Grid-->
         <scene sceneID="YA1-Ik-OIc">
@@ -223,7 +229,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="crD-wy-Pfl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4653" y="-5849"/>
+            <point key="canvasLocation" x="-4705" y="-5225"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="57l-6b-7dG">
@@ -242,10 +248,83 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSV-gi-h6T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2351" y="-6788"/>
+            <point key="canvasLocation" x="-1863" y="-6768"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VZE-EW-8he">
+            <objects>
+                <navigationController id="JX4-o8-9Vc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mLC-7W-Mdm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tid-dP-ykw" kind="relationship" relationship="rootViewController" id="H2l-S7-OFD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CNQ-ri-Q4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2602" y="-5970"/>
+        </scene>
+        <!--BookDetail-->
+        <scene sceneID="mLl-2B-Lip">
+            <objects>
+                <tableViewController title="Add Book" id="tid-dP-ykw" userLabel="BookDetail" customClass="BookDetailViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="0gU-8h-pzc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="HDl-AE-gqq">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="42" id="M7u-F3-GqU">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M7u-F3-GqU" id="hD8-xL-Lp9">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Book Title" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6uV-SL-Sb2">
+                                                    <rect key="frame" x="8" y="0.0" width="584" height="42"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="done" destination="tid-dP-ykw" eventType="editingDidEndOnExit" id="Vak-L4-Jg5"/>
+                                                        <outlet property="delegate" destination="tid-dP-ykw" id="miX-6c-1iw"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="tid-dP-ykw" id="fCE-ib-Iy4"/>
+                            <outlet property="delegate" destination="tid-dP-ykw" id="noR-xW-Q4k"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add Book" id="QCe-8Y-iLc">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ZPy-e8-11y">
+                            <connections>
+                                <action selector="cancel" destination="tid-dP-ykw" id="kGu-ig-fEc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="X53-J1-OSv">
+                            <connections>
+                                <action selector="done" destination="tid-dP-ykw" id="qbT-9v-ubg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="PageTitle" destination="6uV-SL-Sb2" id="tpl-0p-asI"/>
+                        <outlet property="doneBarButton" destination="X53-J1-OSv" id="XEM-wJ-jAe"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RnL-M8-k2B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1679" y="-5976"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="83j-w0-9Dp"/>
+        <segue reference="jDv-OZ-PX2"/>
     </inferredMetricsTieBreakers>
 </document>

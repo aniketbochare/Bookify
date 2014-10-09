@@ -9,6 +9,7 @@
 #import "PagesTableViewController.h"
 #import "PageListItem.h"
 #import "PageDetailViewController.h"
+#import "BookListItem.h"
 
 @interface PagesTableViewController ()
 
@@ -31,6 +32,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    self.title = self.selectedBook.BookTitle;
   
     /*Used for testing NSMutableArray *_pages object creation*/
     

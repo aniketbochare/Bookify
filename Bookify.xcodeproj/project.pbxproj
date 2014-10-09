@@ -20,9 +20,10 @@
 		F808F3AE19E0D47A0002D336 /* PageListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F3AD19E0D47A0002D336 /* PageListItem.m */; };
 		F808F3B119E17E0C0002D336 /* PageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F3B019E17E0C0002D336 /* PageDetailViewController.m */; };
 		F808F3B319E17E530002D336 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = F808F3B219E17E530002D336 /* License.txt */; };
+		F873978219E6419700D5EAA7 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F873978119E6419700D5EAA7 /* BookDetailViewController.m */; };
 		F8B7FF1E19E54AC900E125F1 /* BookListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B7FF1D19E54AC900E125F1 /* BookListItem.m */; };
 		F8B7FF2119E5578E00E125F1 /* BooksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B7FF2019E5578E00E125F1 /* BooksTableViewController.m */; };
-		F8B7FF2319E5584F00E125F1 /* File in Resources */ = {isa = PBXBuildFile; fileRef = F8B7FF2219E5584F00E125F1 /* File */; };
+		F8B7FF2319E5584F00E125F1 /* Test.txt in Resources */ = {isa = PBXBuildFile; fileRef = F8B7FF2219E5584F00E125F1 /* Test.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,11 +59,13 @@
 		F808F3AF19E17E0C0002D336 /* PageDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageDetailViewController.h; sourceTree = "<group>"; };
 		F808F3B019E17E0C0002D336 /* PageDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageDetailViewController.m; sourceTree = "<group>"; };
 		F808F3B219E17E530002D336 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
+		F873978019E6419700D5EAA7 /* BookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailViewController.h; sourceTree = "<group>"; };
+		F873978119E6419700D5EAA7 /* BookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailViewController.m; sourceTree = "<group>"; };
 		F8B7FF1C19E54AC900E125F1 /* BookListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookListItem.h; sourceTree = "<group>"; };
 		F8B7FF1D19E54AC900E125F1 /* BookListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookListItem.m; sourceTree = "<group>"; };
 		F8B7FF1F19E5578E00E125F1 /* BooksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BooksTableViewController.h; path = ../BooksTableViewController.h; sourceTree = "<group>"; };
 		F8B7FF2019E5578E00E125F1 /* BooksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BooksTableViewController.m; path = ../BooksTableViewController.m; sourceTree = "<group>"; };
-		F8B7FF2219E5584F00E125F1 /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
+		F8B7FF2219E5584F00E125F1 /* Test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Test.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +115,8 @@
 				F808F37C19E0398A0002D336 /* Main.storyboard */,
 				F8B7FF1F19E5578E00E125F1 /* BooksTableViewController.h */,
 				F8B7FF2019E5578E00E125F1 /* BooksTableViewController.m */,
-				F8B7FF2219E5584F00E125F1 /* File */,
+				F873978019E6419700D5EAA7 /* BookDetailViewController.h */,
+				F873978119E6419700D5EAA7 /* BookDetailViewController.m */,
 				F808F3A319E050760002D336 /* PagesTableViewController.h */,
 				F808F3A419E050760002D336 /* PagesTableViewController.m */,
 				F808F3A919E052AA0002D336 /* BookGridCollectionViewController.h */,
@@ -133,6 +137,7 @@
 		F808F36F19E039890002D336 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F8B7FF2219E5584F00E125F1 /* Test.txt */,
 				F808F37019E039890002D336 /* Info.plist */,
 				F808F37119E039890002D336 /* main.m */,
 			);
@@ -246,7 +251,7 @@
 			files = (
 				F808F3A219E0491A0002D336 /* .gitignore in Resources */,
 				F808F37E19E0398A0002D336 /* Main.storyboard in Resources */,
-				F8B7FF2319E5584F00E125F1 /* File in Resources */,
+				F8B7FF2319E5584F00E125F1 /* Test.txt in Resources */,
 				F808F39D19E03F900002D336 /* LaunchImage.png in Resources */,
 				F808F38319E0398A0002D336 /* LaunchScreen.xib in Resources */,
 				F808F3B319E17E530002D336 /* License.txt in Resources */,
@@ -276,6 +281,7 @@
 				F808F37219E039890002D336 /* main.m in Sources */,
 				F808F3B119E17E0C0002D336 /* PageDetailViewController.m in Sources */,
 				F8B7FF1E19E54AC900E125F1 /* BookListItem.m in Sources */,
+				F873978219E6419700D5EAA7 /* BookDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

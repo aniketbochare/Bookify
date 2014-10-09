@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "PageDetailViewController.h"
 
+@class BookListItem;
+
 @interface PagesTableViewController : UITableViewController<PageDetailViewControllerDelegate>
+
+@property (nonatomic, strong) BookListItem *selectedBook;
 
 //- (IBAction)addPage;
 
