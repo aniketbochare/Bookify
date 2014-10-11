@@ -9,6 +9,7 @@
 #import "BooksTableViewController.h"
 #import "BookListItem.h"
 #import "PagesTableViewController.h"
+#import "PageListItem.h"
 
 
 @interface BooksTableViewController ()
@@ -22,34 +23,14 @@
     NSMutableArray *_books;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    
-    self = [super initWithCoder:coder];
-    
-    if (self) {
-        NSLog(@"Inside initcoder self");
-        _books = [[NSMutableArray alloc] initWithCapacity:20];
-        BookListItem *book;
-        
-        book = [[BookListItem alloc] init];
-        book.BookTitle = @"Reminder";
-        [_books addObject:book];
-        
-        book = [[BookListItem alloc]init];
-        book.BookTitle = @"History";
-        [_books addObject:book];
-        
-        book = [[BookListItem alloc]init];
-        book.BookTitle = @"Science";
-        [_books addObject:book];
-        
-        book = [[BookListItem alloc] init];
-        book.BookTitle = @"Geography";
-        [_books addObject:book];
-    }
-    return self;
-}
+ -(id)initWithCoder:(NSCoder *)aDecoder
+ {
+ if ((self = [super initWithCoder:aDecoder]))
+ {
+ [self loadBookListItems];
+ }
+ return self;
+ }
 
 
 - (void)viewDidLoad {
@@ -91,7 +72,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    NSLog(@"assigning values to cell");
+    NSLog(@"Assigning values to cell");
     
     BookListItem *book = _books[indexPath.row];
     cell.textLabel.text = book.BookTitle;
@@ -211,7 +192,61 @@
     
 }
 
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    //Creating segue manually instead of using storyboard.
+    UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"EditBookNavigationController"];
+    
+    BookDetailViewController *bookDetailViewController = (BookDetailViewController*) navigationController.topViewController;
+    bookDetailViewController.delegate =self;
+    BookListItem *book = _books[indexPath.row];
+    bookDetailViewController.bookToEdit = book;
+    
+    //Presenting navigation controller programatically
+    NSLog(@"Calling present");
+    [self presentViewController:navigationController animated:YES completion:nil];
+    
+}
 
+
+/*Adding persistance to the data. Data stores in document directory and hence sandboxed*/
+
+ 
+ - (NSString *)pathToDocumentDirectory
+ {
+ NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
+ NSString *documentsDirectoryPath = [paths firstObject];
+ return documentsDirectoryPath;
+ }
+ 
+ - (NSString *)pathTotheFile
+ {
+ return [[self pathToDocumentDirectory] stringByAppendingPathComponent:@"BookList.plist"];
+ }
+ 
+ - (void)saveBookListItems
+ {
+ NSMutableData *data = [[NSMutableData alloc] init];
+ NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+ [archiver encodeObject:_books forKey:@"BookListItem"];
+ [archiver finishEncoding];
+ [data writeToFile:[self pathTotheFile] atomically:YES];
+ }
+ 
+ - (void)loadBookListItems {
+ NSString *path = [self pathTotheFile];
+ if ([[NSFileManager defaultManager] fileExistsAtPath:path])
+ {
+ NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+ NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+ _books = [unarchiver decodeObjectForKey:@"BookListItem"];
+ [unarchiver finishDecoding];
+ }
+ else
+ {
+ _books = [[NSMutableArray alloc] initWithCapacity:20];
+ }
+ }
 
 
 

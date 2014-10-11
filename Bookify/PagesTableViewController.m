@@ -17,66 +17,12 @@
 
 @implementation PagesTableViewController
 
-{
-    NSMutableArray *_pages;
-}
 
--(id)initWithCoder:(NSCoder *)aDecoder
+- (void)viewDidLoad
 {
-    if ((self = [super initWithCoder:aDecoder]))
-    {
-        [self loadPageListItems];
-    }
-    return self;
-}
-
-- (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
     self.title = self.selectedBook.BookTitle;
-  
-    /*Used for testing NSMutableArray *_pages object creation*/
-    
-   /* NSLog(@"Documents folder is %@", [self pathToDocumentDirectory]);
-    NSLog(@"Data file path is %@", [self pathTotheFile]);
-    
-    _pages = [[NSMutableArray alloc] initWithCapacity:20];
-    
-    
-    PageListItem *page;
-    
-    page = [[PageListItem alloc] init];
-    page.PageTitle = @"History";
-    page.checked = NO;
-    [_pages addObject:page];
-    
-    page = [[PageListItem alloc] init];
-    page.PageTitle = @"Geography";
-    page.checked = YES;
-    [_pages addObject:page];
-    
-    page = [[PageListItem alloc] init];
-    page.PageTitle = @"Software Engineering";
-    page.checked = YES;
-    [_pages addObject:page];
-    
-    page = [[PageListItem alloc] init];
-    page.PageTitle = @"Social Science";
-    page.checked = NO;
-    [_pages addObject:page];
-    
-    page = [[PageListItem alloc] init];
-    page.PageTitle = @"Music";
-    page.checked = YES;
-    [_pages addObject:page];
-    */
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -91,9 +37,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return [_pages count];
+
+    return [self.selectedBook.pages count];
+    
 }
 
 
@@ -120,8 +66,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+     NSLog(@"Inside return cell");
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PageListCell" forIndexPath:indexPath];
-    PageListItem *page = _pages[indexPath.row];
+    PageListItem *page = self.selectedBook.pages[indexPath.row];
     [self configureCheckmarkForCell:cell withPage:page];
     [self configureTextForCell:cell withPage:page];
     return cell;
@@ -132,61 +80,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    PageListItem *page = _pages[indexPath.row];
+    PageListItem *page = self.selectedBook.pages[indexPath.row];
     page.checked = !page.checked;
     [self configureCheckmarkForCell:cell withPage:page];
-    [self savePageListItems];
+
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-/*
- This function helps to add the object to instance variable array. Can be used for testing and was tied to add button before got overriden by the segue.
- 
-- (IBAction)addBook
-{
-    NSInteger lastRowIndex = [_pages count];
-    PageListItem* pages = [[PageListItem alloc]init];
-    pages.PageTitle = @"New Page";
-    pages.checked = NO;
-    [_pages addObject:pages];
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRowIndex inSection:0];
-    NSArray *indexPaths = @[indexPath];
-    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
-    
-}
-*/
+
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [_pages removeObjectAtIndex:indexPath.row];
+    [self.selectedBook.pages removeObjectAtIndex:indexPath.row];
     NSArray *indexPaths = @[indexPath];
-    [self savePageListItems];
     [tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
     
     
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 
 #pragma mark - Navigation
@@ -220,7 +129,7 @@
         controller.delegate = self;
         NSLog(@"Assigned Delegate");
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        controller.pageToEdit = _pages[indexPath.row];
+        controller.pageToEdit = self.selectedBook.pages[indexPath.row];
     }
     
 }
@@ -238,10 +147,10 @@
 - (void)pageDetailViewController: (PageDetailViewController *)controller didFinishAddingPage:(PageListItem*)page{
     
     //Get last row Index for addition
-    NSInteger lastRowIndex = [_pages count];
+    NSInteger lastRowIndex = [self.selectedBook.pages count];
     
     //Add Page to the _pages instance variable.
-    [_pages addObject:page];
+    [self.selectedBook.pages addObject:page];
     
     //Get Index path for the index last row.
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRowIndex inSection:0];
@@ -251,7 +160,7 @@
     //This funtion is important as it calls the delegate functions to create row view at NSIndexpath and redraws the cell. Use this always for adding row to a table view.
     [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
     
-    [self savePageListItems];
+  //  [self savePageListItems];
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
@@ -259,7 +168,7 @@
 
 - (void)pageDetailViewController: (PageDetailViewController *)controller didFinishEditingPage:(PageListItem*)page{
     
-    NSInteger editPageIndex = [_pages indexOfObject:page];
+    NSInteger editPageIndex = [self.selectedBook.pages indexOfObject:page];
     NSIndexPath *editIndexPath = [NSIndexPath indexPathForRow:editPageIndex inSection:0];
     
     //Get that cell with this indexpath
@@ -268,49 +177,12 @@
     
     [self configureTextForCell:editCell withPage:page];
     
-    [self savePageListItems];
+ //   [self savePageListItems];
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
     
 }
 
-/*Adding persistance to the data. Data stores in document directory and hence sandboxed*/
-
-- (NSString *)pathToDocumentDirectory
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectoryPath = [paths firstObject];
-    return documentsDirectoryPath;
-}
-
-- (NSString *)pathTotheFile
-{
-    return [[self pathToDocumentDirectory] stringByAppendingPathComponent:@"PageList.plist"];
-}
-
-- (void)savePageListItems
-{
-    NSMutableData *data = [[NSMutableData alloc] init];
-    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
-    [archiver encodeObject:_pages forKey:@"PageListItem"];
-    [archiver finishEncoding];
-    [data writeToFile:[self pathTotheFile] atomically:YES];
-}
-
-- (void)loadPageListItems {
-    NSString *path = [self pathTotheFile];
-    if ([[NSFileManager defaultManager] fileExistsAtPath:path])
-    {
-        NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
-        _pages = [unarchiver decodeObjectForKey:@"PageListItem"];
-        [unarchiver finishDecoding];
-    }
-    else
-    {
-        _pages = [[NSMutableArray alloc] initWithCapacity:20];
-    }
-}
 
 @end

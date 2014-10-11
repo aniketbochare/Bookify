@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BookListItem : NSObject
+@interface BookListItem : NSObject <NSCoding>
 
 @property (nonatomic, copy) NSString *BookTitle;
+@property (nonatomic, strong) NSMutableArray *pages;
 
 @end

@@ -11,5 +11,6 @@
 
 @interface BooksTableViewController : UITableViewController <BookDetailViewControllerDelegate>
 
+- (void)saveBookListItems;
 
 @end

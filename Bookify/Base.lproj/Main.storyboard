@@ -253,7 +253,7 @@
         <!--Navigation Controller-->
         <scene sceneID="VZE-EW-8he">
             <objects>
-                <navigationController id="JX4-o8-9Vc" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="EditBookNavigationController" id="JX4-o8-9Vc" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mLC-7W-Mdm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -315,7 +315,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="PageTitle" destination="6uV-SL-Sb2" id="tpl-0p-asI"/>
+                        <outlet property="BookTitle" destination="6uV-SL-Sb2" id="fEX-CL-B6j"/>
                         <outlet property="doneBarButton" destination="X53-J1-OSv" id="XEM-wJ-jAe"/>
                     </connections>
                 </tableViewController>
