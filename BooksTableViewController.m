@@ -10,6 +10,7 @@
 #import "BookListItem.h"
 #import "PagesTableViewController.h"
 #import "PageListItem.h"
+#import "DataModel.h"
 
 
 @interface BooksTableViewController ()
@@ -18,19 +19,6 @@
 
 
 @implementation BooksTableViewController
-
-{
-    NSMutableArray *_books;
-}
-
- -(id)initWithCoder:(NSCoder *)aDecoder
- {
- if ((self = [super initWithCoder:aDecoder]))
- {
- [self loadBookListItems];
- }
- return self;
- }
 
 
 - (void)viewDidLoad {
@@ -207,46 +195,6 @@
     [self presentViewController:navigationController animated:YES completion:nil];
     
 }
-
-
-/*Adding persistance to the data. Data stores in document directory and hence sandboxed*/
-
- 
- - (NSString *)pathToDocumentDirectory
- {
- NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
- NSString *documentsDirectoryPath = [paths firstObject];
- return documentsDirectoryPath;
- }
- 
- - (NSString *)pathTotheFile
- {
- return [[self pathToDocumentDirectory] stringByAppendingPathComponent:@"BookList.plist"];
- }
- 
- - (void)saveBookListItems
- {
- NSMutableData *data = [[NSMutableData alloc] init];
- NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
- [archiver encodeObject:_books forKey:@"BookListItem"];
- [archiver finishEncoding];
- [data writeToFile:[self pathTotheFile] atomically:YES];
- }
- 
- - (void)loadBookListItems {
- NSString *path = [self pathTotheFile];
- if ([[NSFileManager defaultManager] fileExistsAtPath:path])
- {
- NSData *data = [[NSData alloc] initWithContentsOfFile:path];
- NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
- _books = [unarchiver decodeObjectForKey:@"BookListItem"];
- [unarchiver finishDecoding];
- }
- else
- {
- _books = [[NSMutableArray alloc] initWithCapacity:20];
- }
- }
 
 
 

@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "BookDetailViewController.h"
 
+@class DataModel;
+
 @interface BooksTableViewController : UITableViewController <BookDetailViewControllerDelegate>
 
-- (void)saveBookListItems;
+@property (nonatomic, strong) DataModel *dataModel;
 
 @end
