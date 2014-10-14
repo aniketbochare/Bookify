@@ -33,6 +33,25 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    //Making self delegate so that this controller gets messages for state of navigation controller.
+    self.navigationController.delegate = self;
+    
+    //Getting default values saved if app was terminated ever.
+    NSInteger index = [[NSUserDefaults standardUserDefaults] integerForKey:@"BookListItemIndex"];
+    
+    //If it was terminated it will have index of table and hence we check for non -1 value here.
+    
+    if (index>=0 && index< self.dataModel.books.count) {
+        BookListItem *book = self.dataModel.books[index];
+        [self performSegueWithIdentifier:@"ShowPages" sender:book];
+    }
+    
+
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -47,7 +66,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [_books count];
+    NSLog(@"Inside numberOfRowsInSection ");
+    NSLog(@"Count of section = %ld and row =%lu", (long)section,(unsigned long)self.dataModel.books.count);
+    return [self.dataModel.books count];
 }
 
 
@@ -62,7 +83,7 @@
     
     NSLog(@"Assigning values to cell");
     
-    BookListItem *book = _books[indexPath.row];
+    BookListItem *book = self.dataModel.books[indexPath.row];
     cell.textLabel.text = book.BookTitle;
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     return cell;
@@ -71,8 +92,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    BookListItem *book = _books[indexPath.row];
     
+    //Adding to remember screen when apps gets terminated and user is back to same place when it is launched.
+    [[NSUserDefaults standardUserDefaults] setInteger:indexPath.row forKey:@"BookListItemIndex"];
+    BookListItem *book = self.dataModel.books[indexPath.row];
     [self performSegueWithIdentifier:@"ShowPages" sender:book];
 }
 
@@ -90,7 +113,7 @@
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [_books removeObjectAtIndex:indexPath.row];
+    [self.dataModel.books removeObjectAtIndex:indexPath.row];
     NSArray *indexPaths = @[indexPath];
    // [self savePageListItems];
     [tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];}
@@ -121,7 +144,7 @@
        PagesTableViewController *controller = segue.destinationViewController;
         controller.selectedBook = sender;
     }
-    else if ([segue.identifier isEqualToString:@"EditBook"])
+    else if ([segue.identifier isEqualToString:@"AddBook"])
     {
         UINavigationController *navigationController = segue.destinationViewController;
         BookDetailViewController *controller = (BookDetailViewController*)navigationController.topViewController;
@@ -143,10 +166,10 @@
 - (void)bookDetailViewController: (PageDetailViewController *)controller didFinishAddingBook:(BookListItem*)book{
     
     //Get last row Index for addition
-    NSInteger lastRowIndex = [_books count];
+    NSInteger lastRowIndex = [self.dataModel.books count];
     
-    //Add Page to the _pages instance variable.
-    [_books addObject:book];
+    //Add Page to the book instance variable.
+    [self.dataModel.books addObject:book];
     
     //Get Index path for the index last row.
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRowIndex inSection:0];
@@ -154,22 +177,26 @@
     NSArray *indexPaths = @[indexPath];
     
     //This funtion is important as it calls the delegate functions to create row view at NSIndexpath and redraws the cell. Use this always for adding row to a table view.
+    NSLog(@"Count of row  before =%lu", (unsigned long)self.dataModel.books.count);
+    
     [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
     
-  //  [self saveBookListItems];
+   NSLog(@"Count of row  after =%lu", (unsigned long)self.dataModel.books.count);
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
-- (void)bookDetailViewController: (BookDetailViewController *)controller didFinishEditingBook:(BookListItem *)book:(BookListItem*)book{
+- (void)bookDetailViewController: (BookDetailViewController *)controller didFinishEditingBook:(BookListItem *)book{
     
-    NSInteger editBookIndex = [_books indexOfObject:book];
+    NSInteger editBookIndex = [self.dataModel.books indexOfObject:book];
     NSIndexPath *editIndexPath = [NSIndexPath indexPathForRow:editBookIndex inSection:0];
     
     //Get that cell with this indexpath
     
     UITableViewCell *editCell = [self.tableView cellForRowAtIndexPath:editIndexPath];
+    
+    editCell.textLabel.text =book.BookTitle;
     
   //  [self configureTextForCell:editCell withPage:book];
     
@@ -187,7 +214,7 @@
     
     BookDetailViewController *bookDetailViewController = (BookDetailViewController*) navigationController.topViewController;
     bookDetailViewController.delegate =self;
-    BookListItem *book = _books[indexPath.row];
+    BookListItem *book = self.dataModel.books[indexPath.row];
     bookDetailViewController.bookToEdit = book;
     
     //Presenting navigation controller programatically
@@ -196,6 +223,14 @@
     
 }
 
+//Implementing the navigation controller delegate to handle back events and save an index which is not in range for array (0 to n-1)
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    if (viewController == self)
+    {
+        [[NSUserDefaults standardUserDefaults] setInteger:-1 forKey:@"BookListItemIndex"];
+    }
+}
 
 
 

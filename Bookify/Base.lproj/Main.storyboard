@@ -39,7 +39,7 @@
                     <navigationItem key="navigationItem" title="Books" id="pwG-YK-el1">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="o3t-yt-YEn">
                             <connections>
-                                <segue destination="JX4-o8-9Vc" kind="presentation" identifier="EditBook" id="waV-6k-n4b"/>
+                                <segue destination="JX4-o8-9Vc" kind="presentation" identifier="AddBook" id="waV-6k-n4b"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -13,6 +13,15 @@
 /*Adding persistance to the data. Data stores in document directory and hence sandboxed*/
 
 
+- (id)init
+{
+    if ((self = [super init]))
+    {
+        [self loadBookListItems];
+    }
+    return self;
+}
+
 - (NSString *)pathToDocumentDirectory
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
@@ -36,8 +45,11 @@
 
 - (void)loadBookListItems {
     NSString *path = [self pathTotheFile];
+    NSLog(@"Path= %@",path);
+    
     if ([[NSFileManager defaultManager] fileExistsAtPath:path])
     {
+        NSLog(@"came plist");
         NSData *data = [[NSData alloc] initWithContentsOfFile:path];
         NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
         self.books = [unarchiver decodeObjectForKey:@"BookListItem"];
@@ -45,7 +57,9 @@
     }
     else
     {
+        NSLog(@"came here");
         self.books = [[NSMutableArray alloc] initWithCapacity:20];
+        
     }
 }
 

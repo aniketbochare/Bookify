@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "BookDetailViewController.h"
 
+
 @class DataModel;
 
-@interface BooksTableViewController : UITableViewController <BookDetailViewControllerDelegate>
+@interface BooksTableViewController : UITableViewController <BookDetailViewControllerDelegate,UINavigationControllerDelegate>
 
 @property (nonatomic, strong) DataModel *dataModel;
 

@@ -8,19 +8,35 @@
 
 #import "AppDelegate.h"
 #import "BooksTableViewController.h"
+#import "DataModel.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    return YES;
+{
+    DataModel *_dataModel;
 }
 
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    _dataModel = [[DataModel alloc] init];
+    
+    //Here we have UITabBarController and it is rootViewController
+    
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+
+    //Here we have UINavigationController and its 0th index is UINavigationController
+    UINavigationController *navigationController = (UINavigationController *) tabBarController.viewControllers[0];
+    
+    //(UINavigationController *)self.window.rootViewController;
+    BooksTableViewController *controller = navigationController.viewControllers[0];
+    controller.dataModel = _dataModel;
+    
+    return YES;
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -28,9 +44,8 @@
 
 
 - (void)saveData {
-    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    BooksTableViewController *controller = navigationController.viewControllers[0];
-    [controller saveBookListItems];
+ 
+    [_dataModel saveBookListItems];
 
 }
 
