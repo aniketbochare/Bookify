@@ -13,4 +13,7 @@
 @property (nonatomic, copy) NSString *BookTitle;
 @property (nonatomic, strong) NSMutableArray *pages;
 
+
+- (int)countIncompletePages;
+
 @end

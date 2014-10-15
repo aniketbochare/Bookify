@@ -40,7 +40,7 @@
     self.navigationController.delegate = self;
     
     //Getting default values saved if app was terminated ever.
-    NSInteger index = [[NSUserDefaults standardUserDefaults] integerForKey:@"BookListItemIndex"];
+    NSInteger index = [self.dataModel indexOfSelectedBook];
     
     //If it was terminated it will have index of table and hence we check for non -1 value here.
     
@@ -78,7 +78,7 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
     NSLog(@"Assigning values to cell");
@@ -86,6 +86,7 @@
     BookListItem *book = self.dataModel.books[indexPath.row];
     cell.textLabel.text = book.BookTitle;
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Incomplete", [book countIncompletePages]];
     return cell;
 
 }
@@ -94,7 +95,7 @@
 {
     
     //Adding to remember screen when apps gets terminated and user is back to same place when it is launched.
-    [[NSUserDefaults standardUserDefaults] setInteger:indexPath.row forKey:@"BookListItemIndex"];
+    [self.dataModel setIndexOfSelectedBook:indexPath.row];
     BookListItem *book = self.dataModel.books[indexPath.row];
     [self performSegueWithIdentifier:@"ShowPages" sender:book];
 }
@@ -228,7 +229,7 @@
 {
     if (viewController == self)
     {
-        [[NSUserDefaults standardUserDefaults] setInteger:-1 forKey:@"BookListItemIndex"];
+        [self.dataModel setIndexOfSelectedBook:-1];;
     }
 }
 

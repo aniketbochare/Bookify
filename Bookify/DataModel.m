@@ -7,6 +7,7 @@
 //
 
 #import "DataModel.h"
+#import "BookListItem.h"
 
 @implementation DataModel
 
@@ -18,6 +19,8 @@
     if ((self = [super init]))
     {
         [self loadBookListItems];
+        [self registerDefaults];
+        [self handleFirstTime];
     }
     return self;
 }
@@ -63,7 +66,38 @@
     }
 }
 
+//NSUserDefaults code in datamodel
 
+- (void)registerDefaults
+{
+    NSDictionary *defaultDictionary = @{
+                                 @"BookListItemIndex" : @-1,
+                                 @"isFirstTime" :@YES
+                                 };
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultDictionary];
+}
 
+- (NSInteger)indexOfSelectedBook
+{
+    return [[NSUserDefaults standardUserDefaults] integerForKey:@"BookListItemIndex"];
+}
 
+- (void)setIndexOfSelectedBook:(NSInteger)index
+{
+    [[NSUserDefaults standardUserDefaults] setInteger:index forKey:@"BookListItemIndex"];
+}
+
+-(void)handleFirstTime
+{
+   BOOL isFirstTime = [[NSUserDefaults standardUserDefaults] boolForKey:@"isFirstTime"];
+    if (isFirstTime)
+    {
+        BookListItem *firstBook = [[BookListItem alloc] init];
+        firstBook.BookTitle = @"Reminders";
+        [self.books addObject:firstBook];
+        [self setIndexOfSelectedBook:0];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isFirstTime"];
+    }
+
+}
 @end

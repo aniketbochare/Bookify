@@ -13,5 +13,7 @@
  @property (nonatomic, strong)  NSMutableArray *books;
 
  - (void)saveBookListItems;
+ - (NSInteger)indexOfSelectedBook;
+ - (void)setIndexOfSelectedBook:(NSInteger)index;
 
 @end

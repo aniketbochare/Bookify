@@ -7,6 +7,7 @@
 //
 
 #import "BookListItem.h"
+#import "PageListItem.h"
 
 @implementation BookListItem
 
@@ -35,6 +36,20 @@
         self.pages= [aDecoder decodeObjectForKey:@"pages"];
     }
     return self;
+}
+
+
+- (int)countIncompletePages
+{
+    int unCheckedPageCount = 0;
+    for (PageListItem *page in self.pages)
+    {
+        if (!page.checked)
+        {
+            unCheckedPageCount += 1;
+        }
+    }
+    return unCheckedPageCount;
 }
 
 
