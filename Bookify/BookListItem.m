@@ -14,6 +14,7 @@
 - (id)init {
     if ((self = [super init])) {
         self.pages = [[NSMutableArray alloc] initWithCapacity:20];
+        self.iconName = @"Arts";
     }
     return self;
 }
@@ -25,6 +26,8 @@
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:self.BookTitle forKey:@"BookTitle"];
     [aCoder encodeObject:self.pages forKey:@"pages"];
+    [aCoder encodeObject:self.iconName forKey:@"IconName"];
+    
     
 }
 
@@ -34,6 +37,7 @@
     {
         self.BookTitle= [aDecoder decodeObjectForKey:@"BookTitle"];
         self.pages= [aDecoder decodeObjectForKey:@"pages"];
+        self.iconName = [aDecoder decodeObjectForKey:@"IconName"];
     }
     return self;
 }
@@ -50,6 +54,11 @@
         }
     }
     return unCheckedPageCount;
+}
+
+- (NSComparisonResult)compare:(BookListItem *)otherBookList
+{
+ return [self.BookTitle localizedStandardCompare: otherBookList.BookTitle];
 }
 
 

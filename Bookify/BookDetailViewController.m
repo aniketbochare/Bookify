@@ -15,15 +15,16 @@
 
 @implementation BookDetailViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
-        if (self.bookToEdit != nil)
-    {
-        self.title = @"Edit Book";
-        self.BookTitle.text = self.bookToEdit.BookTitle;
-        self.doneBarButton.enabled = YES;
-    }
+    if (self.bookToEdit != nil)
+        {
+            self.title = @"Edit Book";
+            self.BookTitle.text = self.bookToEdit.BookTitle;
+            self.doneBarButton.enabled = YES;
+        }
     
 }
 
@@ -33,7 +34,8 @@
     [self.BookTitle becomeFirstResponder];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -47,19 +49,19 @@
 
 - (IBAction)done {
     
-    NSLog(@"Calling Done");
+    //NSLog(@"Calling Done");
     
     if (self.bookToEdit.BookTitle)
-    {
-        self.bookToEdit.BookTitle = self.BookTitle.text;
-        [self.delegate bookDetailViewController:self didFinishEditingBook:self.bookToEdit];
-    }
-    else{
-        BookListItem *newbook = [[BookListItem alloc] init];
-        newbook.BookTitle = self.BookTitle.text;
-        
-        [self.delegate bookDetailViewController:self didFinishAddingBook:newbook];
-    }
+        {
+            self.bookToEdit.BookTitle = self.BookTitle.text;
+            [self.delegate bookDetailViewController:self didFinishEditingBook:self.bookToEdit];
+        }
+    else
+        {
+            BookListItem *newbook = [[BookListItem alloc] init];
+            newbook.BookTitle = self.BookTitle.text;
+            [self.delegate bookDetailViewController:self didFinishAddingBook:newbook];
+        }
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath

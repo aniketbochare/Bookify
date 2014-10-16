@@ -21,30 +21,27 @@
 @implementation BooksTableViewController
 
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    
-    NSLog(@"Inside View did load");
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     //Making self delegate so that this controller gets messages for state of navigation controller.
+    
     self.navigationController.delegate = self;
+    //Works better to get information about objects updated from detail view controller than setting up delegates; eg: Getting incomplete count after updates.
     
+    [self.tableView reloadData];
     //Getting default values saved if app was terminated ever.
-    NSInteger index = [self.dataModel indexOfSelectedBook];
     
+    NSInteger index = [self.dataModel indexOfSelectedBook];
     //If it was terminated it will have index of table and hence we check for non -1 value here.
     
-    if (index>=0 && index< self.dataModel.books.count) {
+    if (index>=0 && index< self.dataModel.books.count)
+    {
         BookListItem *book = self.dataModel.books[index];
         [self performSegueWithIdentifier:@"ShowPages" sender:book];
     }
@@ -52,41 +49,54 @@
 
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
-    NSLog(@"Inside numberOfRowsInSection ");
-    NSLog(@"Count of section = %ld and row =%lu", (long)section,(unsigned long)self.dataModel.books.count);
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return [self.dataModel.books count];
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSLog(@"Inside cellforrowatindexpath");
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
     
-    NSLog(@"Assigning values to cell");
+    if (cell == nil)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        
+        }
     
     BookListItem *book = self.dataModel.books[indexPath.row];
     cell.textLabel.text = book.BookTitle;
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Incomplete", [book countIncompletePages]];
+    int incompleteCount = [book countIncompletePages];
+    
+    if ([book.pages count] == 0)
+        {
+            cell.detailTextLabel.text = @"No Pages!";
+        }
+    else if (incompleteCount ==0)
+        {
+            cell.detailTextLabel.text = @"Done!";
+        }
+    else
+        {
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Incomplete", [book countIncompletePages]];
+        }
+
     return cell;
 
 }
@@ -102,47 +112,28 @@
 
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-
 // Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
     
     [self.dataModel.books removeObjectAtIndex:indexPath.row];
     NSArray *indexPaths = @[indexPath];
    // [self savePageListItems];
-    [tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];}
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+    [tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if ([segue.identifier isEqualToString:@"ShowPages"]) {
-       PagesTableViewController *controller = segue.destinationViewController;
+    if ([segue.identifier isEqualToString:@"ShowPages"])
+    {
+        PagesTableViewController *controller = segue.destinationViewController;
         controller.selectedBook = sender;
     }
     else if ([segue.identifier isEqualToString:@"AddBook"])
@@ -164,45 +155,34 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)bookDetailViewController: (PageDetailViewController *)controller didFinishAddingBook:(BookListItem*)book{
+- (void)bookDetailViewController: (PageDetailViewController *)controller didFinishAddingBook:(BookListItem*)book
+{
     
-    //Get last row Index for addition
     NSInteger lastRowIndex = [self.dataModel.books count];
-    
-    //Add Page to the book instance variable.
     [self.dataModel.books addObject:book];
-    
-    //Get Index path for the index last row.
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRowIndex inSection:0];
     //Add the indexpaths to the array as we can add multiple rows.
     NSArray *indexPaths = @[indexPath];
     
     //This funtion is important as it calls the delegate functions to create row view at NSIndexpath and redraws the cell. Use this always for adding row to a table view.
-    NSLog(@"Count of row  before =%lu", (unsigned long)self.dataModel.books.count);
     
     [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
     
-   NSLog(@"Count of row  after =%lu", (unsigned long)self.dataModel.books.count);
+    //Sorting only happens here and editing book
     
+    [self.dataModel sortBookLists];
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
-- (void)bookDetailViewController: (BookDetailViewController *)controller didFinishEditingBook:(BookListItem *)book{
+- (void)bookDetailViewController: (BookDetailViewController *)controller didFinishEditingBook:(BookListItem *)book
+{
     
     NSInteger editBookIndex = [self.dataModel.books indexOfObject:book];
     NSIndexPath *editIndexPath = [NSIndexPath indexPathForRow:editBookIndex inSection:0];
-    
-    //Get that cell with this indexpath
-    
     UITableViewCell *editCell = [self.tableView cellForRowAtIndexPath:editIndexPath];
-    
     editCell.textLabel.text =book.BookTitle;
-    
-  //  [self configureTextForCell:editCell withPage:book];
-    
- //   [self saveBookListItems];
-    
+    [self.dataModel sortBookLists];
     [self dismissViewControllerAnimated:YES completion:nil];
     
     

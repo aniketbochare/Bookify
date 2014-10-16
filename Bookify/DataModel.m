@@ -100,4 +100,10 @@
     }
 
 }
+
+- (void)sortBookLists
+{
+    [self.books sortUsingSelector:@selector(compare:)];
+}
+
 @end

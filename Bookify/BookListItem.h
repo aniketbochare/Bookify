@@ -11,6 +11,7 @@
 @interface BookListItem : NSObject <NSCoding>
 
 @property (nonatomic, copy) NSString *BookTitle;
+@property (nonatomic, copy) NSString *iconName;
 @property (nonatomic, strong) NSMutableArray *pages;
 
 

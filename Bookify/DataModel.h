@@ -15,5 +15,6 @@
  - (void)saveBookListItems;
  - (NSInteger)indexOfSelectedBook;
  - (void)setIndexOfSelectedBook:(NSInteger)index;
+ - (void)sortBookLists;
 
 @end

@@ -25,6 +25,7 @@
 		F8B7FF2119E5578E00E125F1 /* BooksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B7FF2019E5578E00E125F1 /* BooksTableViewController.m */; };
 		F8B7FF2319E5584F00E125F1 /* Test.txt in Resources */ = {isa = PBXBuildFile; fileRef = F8B7FF2219E5584F00E125F1 /* Test.txt */; };
 		F8E55B0D19EA6EDE00AF13D7 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E55B0C19EA6EDE00AF13D7 /* DataModel.m */; };
+		F8FC57A619EF5833003018EB /* Attribution.html in Resources */ = {isa = PBXBuildFile; fileRef = F8FC57A519EF5833003018EB /* Attribution.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		F8B7FF2219E5584F00E125F1 /* Test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Test.txt; sourceTree = "<group>"; };
 		F8E55B0B19EA6EDE00AF13D7 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		F8E55B0C19EA6EDE00AF13D7 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		F8FC57A519EF5833003018EB /* Attribution.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Attribution.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		F808F36319E039890002D336 = {
 			isa = PBXGroup;
 			children = (
+				F8FC57A519EF5833003018EB /* Attribution.html */,
 				F808F3B219E17E530002D336 /* License.txt */,
 				F808F3A119E0491A0002D336 /* .gitignore */,
 				F808F36E19E039890002D336 /* Bookify */,
@@ -256,6 +259,7 @@
 			files = (
 				F808F3A219E0491A0002D336 /* .gitignore in Resources */,
 				F808F37E19E0398A0002D336 /* Main.storyboard in Resources */,
+				F8FC57A619EF5833003018EB /* Attribution.html in Resources */,
 				F8B7FF2319E5584F00E125F1 /* Test.txt in Resources */,
 				F808F39D19E03F900002D336 /* LaunchImage.png in Resources */,
 				F808F38319E0398A0002D336 /* LaunchScreen.xib in Resources */,

@@ -18,18 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    if (self.pageToEdit != nil) {
+    if (self.pageToEdit != nil)
+    {
         self.title = @"Edit Item";
         self.PageTitle.text = self.pageToEdit.PageTitle;
     }
-    
-    NSLog(@"Inside View load");
     
 }
 
@@ -47,15 +40,11 @@
 
 - (IBAction)cancel
 {
-    
     [self.delegate pageDetailViewControllerDidCancel:self];
-    
 }
 
-- (IBAction)done {
-    
-     NSLog(@"Calling Done");
-    
+- (IBAction)done
+{
     if (self.pageToEdit.PageTitle)
     {
         self.pageToEdit.PageTitle = self.PageTitle.text;
