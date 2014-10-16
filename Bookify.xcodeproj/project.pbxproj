@@ -19,12 +19,12 @@
 		F808F3AB19E052AA0002D336 /* BookGridCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F3AA19E052AA0002D336 /* BookGridCollectionViewController.m */; };
 		F808F3AE19E0D47A0002D336 /* PageListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F3AD19E0D47A0002D336 /* PageListItem.m */; };
 		F808F3B119E17E0C0002D336 /* PageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F808F3B019E17E0C0002D336 /* PageDetailViewController.m */; };
-		F808F3B319E17E530002D336 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = F808F3B219E17E530002D336 /* License.txt */; };
 		F873978219E6419700D5EAA7 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F873978119E6419700D5EAA7 /* BookDetailViewController.m */; };
 		F8B7FF1E19E54AC900E125F1 /* BookListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B7FF1D19E54AC900E125F1 /* BookListItem.m */; };
 		F8B7FF2119E5578E00E125F1 /* BooksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B7FF2019E5578E00E125F1 /* BooksTableViewController.m */; };
 		F8B7FF2319E5584F00E125F1 /* Test.txt in Resources */ = {isa = PBXBuildFile; fileRef = F8B7FF2219E5584F00E125F1 /* Test.txt */; };
 		F8E55B0D19EA6EDE00AF13D7 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E55B0C19EA6EDE00AF13D7 /* DataModel.m */; };
+		F8EAB13D19EF93CC0099046D /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = F8EAB13C19EF93CC0099046D /* License.txt */; };
 		F8FC57A619EF5833003018EB /* Attribution.html in Resources */ = {isa = PBXBuildFile; fileRef = F8FC57A519EF5833003018EB /* Attribution.html */; };
 		F8FC57D719EF6989003018EB /* IconPickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8FC57D619EF6989003018EB /* IconPickerTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -61,7 +61,6 @@
 		F808F3AD19E0D47A0002D336 /* PageListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageListItem.m; sourceTree = "<group>"; };
 		F808F3AF19E17E0C0002D336 /* PageDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageDetailViewController.h; sourceTree = "<group>"; };
 		F808F3B019E17E0C0002D336 /* PageDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageDetailViewController.m; sourceTree = "<group>"; };
-		F808F3B219E17E530002D336 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		F873978019E6419700D5EAA7 /* BookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailViewController.h; sourceTree = "<group>"; };
 		F873978119E6419700D5EAA7 /* BookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailViewController.m; sourceTree = "<group>"; };
 		F8B7FF1C19E54AC900E125F1 /* BookListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookListItem.h; sourceTree = "<group>"; };
@@ -71,6 +70,7 @@
 		F8B7FF2219E5584F00E125F1 /* Test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Test.txt; sourceTree = "<group>"; };
 		F8E55B0B19EA6EDE00AF13D7 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		F8E55B0C19EA6EDE00AF13D7 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		F8EAB13C19EF93CC0099046D /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		F8FC57A519EF5833003018EB /* Attribution.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Attribution.html; sourceTree = "<group>"; };
 		F8FC57D519EF6989003018EB /* IconPickerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconPickerTableViewController.h; sourceTree = "<group>"; };
 		F8FC57D619EF6989003018EB /* IconPickerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconPickerTableViewController.m; sourceTree = "<group>"; };
@@ -97,8 +97,8 @@
 		F808F36319E039890002D336 = {
 			isa = PBXGroup;
 			children = (
+				F8EAB13C19EF93CC0099046D /* License.txt */,
 				F8FC57A519EF5833003018EB /* Attribution.html */,
-				F808F3B219E17E530002D336 /* License.txt */,
 				F808F3A119E0491A0002D336 /* .gitignore */,
 				F808F36E19E039890002D336 /* Bookify */,
 				F808F39919E03D8F0002D336 /* Resources */,
@@ -266,9 +266,9 @@
 				F808F37E19E0398A0002D336 /* Main.storyboard in Resources */,
 				F8FC57A619EF5833003018EB /* Attribution.html in Resources */,
 				F8B7FF2319E5584F00E125F1 /* Test.txt in Resources */,
+				F8EAB13D19EF93CC0099046D /* License.txt in Resources */,
 				F808F39D19E03F900002D336 /* LaunchImage.png in Resources */,
 				F808F38319E0398A0002D336 /* LaunchScreen.xib in Resources */,
-				F808F3B319E17E530002D336 /* License.txt in Resources */,
 				F808F38019E0398A0002D336 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
