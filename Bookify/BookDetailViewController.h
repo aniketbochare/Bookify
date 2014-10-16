@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IconPickerTableViewController.h"
 
 
 @class BookDetailViewController;
 @class BookListItem;
 
-@protocol BookDetailViewControllerDelegate <NSObject>
+@protocol BookDetailViewControllerDelegate <NSObject,IconPickerControllerDelegate>
 
 - (void)bookDetailViewControllerDidCancel: (BookDetailViewController *)controller;
 /*Protocol function to add new book*/
@@ -31,6 +32,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *BookTitle;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneBarButton;
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+
 @property (nonatomic, weak) id <BookDetailViewControllerDelegate> delegate;
 
 @property (nonatomic, strong) BookListItem *bookToEdit;

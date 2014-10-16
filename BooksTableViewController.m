@@ -82,6 +82,8 @@
     BookListItem *book = self.dataModel.books[indexPath.row];
     cell.textLabel.text = book.BookTitle;
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    cell.imageView.image = [UIImage imageNamed:book.iconName];
+    
     int incompleteCount = [book countIncompletePages];
     
     if ([book.pages count] == 0)

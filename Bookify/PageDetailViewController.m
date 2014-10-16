@@ -50,7 +50,8 @@
         self.pageToEdit.PageTitle = self.PageTitle.text;
         [self.delegate pageDetailViewController:self didFinishEditingPage:self.pageToEdit];
     }
-    else{
+    else
+    {
     PageListItem *newpage = [[PageListItem alloc] init];
     newpage.PageTitle = self.PageTitle.text;
     newpage.checked = NO;

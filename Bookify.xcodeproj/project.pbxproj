@@ -26,6 +26,7 @@
 		F8B7FF2319E5584F00E125F1 /* Test.txt in Resources */ = {isa = PBXBuildFile; fileRef = F8B7FF2219E5584F00E125F1 /* Test.txt */; };
 		F8E55B0D19EA6EDE00AF13D7 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E55B0C19EA6EDE00AF13D7 /* DataModel.m */; };
 		F8FC57A619EF5833003018EB /* Attribution.html in Resources */ = {isa = PBXBuildFile; fileRef = F8FC57A519EF5833003018EB /* Attribution.html */; };
+		F8FC57D719EF6989003018EB /* IconPickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8FC57D619EF6989003018EB /* IconPickerTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		F8E55B0B19EA6EDE00AF13D7 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		F8E55B0C19EA6EDE00AF13D7 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
 		F8FC57A519EF5833003018EB /* Attribution.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Attribution.html; sourceTree = "<group>"; };
+		F8FC57D519EF6989003018EB /* IconPickerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconPickerTableViewController.h; sourceTree = "<group>"; };
+		F8FC57D619EF6989003018EB /* IconPickerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconPickerTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 				F808F3AA19E052AA0002D336 /* BookGridCollectionViewController.m */,
 				F808F3AF19E17E0C0002D336 /* PageDetailViewController.h */,
 				F808F3B019E17E0C0002D336 /* PageDetailViewController.m */,
+				F8FC57D519EF6989003018EB /* IconPickerTableViewController.h */,
+				F8FC57D619EF6989003018EB /* IconPickerTableViewController.m */,
 				F808F3AC19E0D47A0002D336 /* PageListItem.h */,
 				F808F3AD19E0D47A0002D336 /* PageListItem.m */,
 				F8B7FF1C19E54AC900E125F1 /* BookListItem.h */,
@@ -289,6 +294,7 @@
 				F808F3AE19E0D47A0002D336 /* PageListItem.m in Sources */,
 				F808F37519E039890002D336 /* AppDelegate.m in Sources */,
 				F808F37219E039890002D336 /* main.m in Sources */,
+				F8FC57D719EF6989003018EB /* IconPickerTableViewController.m in Sources */,
 				F808F3B119E17E0C0002D336 /* PageDetailViewController.m in Sources */,
 				F8B7FF1E19E54AC900E125F1 /* BookListItem.m in Sources */,
 				F873978219E6419700D5EAA7 /* BookDetailViewController.m in Sources */,

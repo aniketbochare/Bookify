@@ -14,7 +14,7 @@
 - (id)init {
     if ((self = [super init])) {
         self.pages = [[NSMutableArray alloc] initWithCapacity:20];
-        self.iconName = @"Arts";
+        self.iconName = @"books8";
     }
     return self;
 }
